@@ -1,4 +1,4 @@
-package test.spring.bean;
+package test.rose.bean;
 
 public class AreaDTO {
 	
@@ -16,7 +16,5 @@ public class AreaDTO {
 	}
 	public void setArea_name(String area_name) {
 		this.area_name = area_name;
-	}
-	
-	
+	}	
 }

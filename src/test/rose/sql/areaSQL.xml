@@ -2,7 +2,10 @@
 <!DOCTYPE sqlMap PUBLIC ".//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
 "http://ibatis.apache.org/dtd/sql-map-2.dtd">
 <sqlMap>
-	<resultMap class="AreaDTO" id="AreaRes">
-		<result property="id"></result>
+	<resultMap class="AreaDTO" id="AreaDTORes">
+		<result property="are" column="id"/>
+		<result property="pw" column="pw"/>
 	</resultMap>
+	
+	
 </sqlMap>

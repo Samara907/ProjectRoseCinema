@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>/test/test_main.jsp</title>
+<title>/test/genre/InsertGenre.jsp</title>
 </head>
 <body>
-	<a href="/RoseCinema/testarea.do">지역정보추가</a>
+인서트
 </body>
 </html>

@@ -12,4 +12,5 @@
 		</dataSource>
 	</transactionManager>
 	<sqlMap resource="/test/rose/sql/GenreTypeSQL.xml"/>
+	<sqlMap resource="/rose/sql/TicketInfoSQL.xml"></sqlMap>
 </sqlMapConfig>

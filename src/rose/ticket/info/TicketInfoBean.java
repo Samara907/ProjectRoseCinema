@@ -1,7 +1,5 @@
 package rose.ticket.info;
 
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class TicketInfoBean {
-
-	private List<TicketInfoBean> list = null;
 	
-	@Autowired
-	private SqlMapClientTemplate sqlMapClient;
+//	@Autowired
+//	private SqlMapClientTemplate sqlMapClient;
 	
 	@RequestMapping("/goTicketMain.do")
 	public String goTicketMain() {
@@ -52,10 +48,10 @@ public class TicketInfoBean {
 		return "/ticket/test/TestMain.jsp";
 	}
 	
-	@RequestMapping("/InsertTicket.do")
-	public String insertTicket(TicketInfoBean dto, HttpSession session) {
-		sqlMapClient.insert("ticket.insertTest",  dto);
-		return "/goTicketTestMain.do";
-	}
+//	@RequestMapping("/InsertTicket.do")
+//	public String insertTicket(TicketInfoBean dto, HttpSession session) {
+//		sqlMapClient.insert("ticket.insertTest",  dto);
+//		return "/goTicketTestMain.do";
+//	}
 	
 }

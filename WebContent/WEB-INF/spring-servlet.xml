@@ -15,6 +15,24 @@
 		<context:component-scan base-package="test.rose.bean"/>
 		<context:component-scan base-package="test.rose.actionbean"/>
 		<context:component-scan base-package="rose.ticket.info"/>
+		
+		<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+			<property name="configLocation" value="/WEB-INF/sqlMapConfig.xml"></property>
+		</bean>
+		
+		<bean id="SqlMapClientTemplate" class="org.springframework.orm.ibatis.SqlMapClientTemplate">
+			<property name="sqlMapClient" ref="sqlMapClient"></property>
+			<property name="dataSource"   ref="dataSource"></property>
+		</bean>
+		
+		<bean id="dataSource" class="org.apache.tomcat.dbcp.dbcp.BasicDataSource"
+			destroy-method="close"
+			p:driverClassName="oracle.jdbc.driver.OracleDriver"
+			p:url="jdbc:oracle:thin@khmaster.iptime.org:7000:orcl"
+			p:username="final01"
+			p:password="final01">
+		</bean>
+		
 			
 
 		<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

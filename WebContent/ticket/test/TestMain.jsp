@@ -13,9 +13,8 @@ Test Main<p/>
 <a href="/RoseCinema/goDeleteTicketForm.do">Delete Ticket</a><p/>
 <a href="/RoseCinema/goUpdateTicketForm.do">Update Ticket</a><p/>
 <a href="/RoseCinema/goSelectTicketForm.do">Select Ticket</a><p/>
+<a href="/RoseCinema/selectAllTicket.do">selectAll</a>
 
-<c:forEach var="dto" items="${list }">
-	${list. }
-</c:forEach>
+
 </body>
 </html>

@@ -2,6 +2,7 @@ package rose.ticket.info;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class TicketInfoBean {
-
-	private List<TicketInfoBean> list = null;
 	
+	List<TicketInfoDTO> list;
+	TicketInfoDTO dto;
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
 	
@@ -48,7 +49,12 @@ public class TicketInfoBean {
 	}
 	
 	@RequestMapping("/selectAllTicket.do")
-	public String selectAllTicket() {
+	public String selectAllTicket(HttpServletRequest request) {
+		System.out.println("gogogogogogo");
+		list = (List<TicketInfoDTO>)sqlMapClient.queryForList("ticket.selectAll",dto);
+		System.out.println("gogogogogogo");
+		request.setAttribute("dto", list);
+		System.out.println("gogogogogogo");
 		return "/ticket/test/TestMain.jsp";
 	}
 	

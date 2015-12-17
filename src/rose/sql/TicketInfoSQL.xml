@@ -8,7 +8,7 @@
  		INSERT INTO TICKET_INFO (TICKET_ID, NO, SEAT_ID, SCREEN_ID) VALUES(TICKET_ID_SEQ.NEXTVAL, #no#, #seat_id#, #screen_id#)
  	</insert>
  	
- 	<select id="selectAllTicket" resultClass="dto">
+ 	<select id="selectAllTicket" >
  		SELECT * FROM TICKET_INFO
  	</select>
  </sqlMap>

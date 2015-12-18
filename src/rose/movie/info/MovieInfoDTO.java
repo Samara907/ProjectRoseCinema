@@ -1,4 +1,4 @@
-package test.rose.bean;
+package rose.movie.info;
 
 import java.util.Date;
 

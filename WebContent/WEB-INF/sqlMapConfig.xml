@@ -4,6 +4,6 @@
 <sqlMapConfig>
 	<settings useStatementNamespaces="true"/>
 	
-	<sqlMap resource="/test/rose/sql/GenreTypeSQL.xml"/>
-	<sqlMap resource="/rose/sql/TicketInfoSQL.xml"></sqlMap>
+	<sqlMap resource="/rose/genre/type/GenreTypeSQL.xml"></sqlMap>
+	<sqlMap resource="/rose/ticket/info/TicketInfoSQL.xml"></sqlMap>
 </sqlMapConfig>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC ".//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+ "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+ <sqlMap namespace="ticket">
+ 	<typeAlias alias="dto" type="rose.ticket.info.TicketInfoDTO"></typeAlias>
+ 	
+ 	<insert id="insertTest" parameterClass="dto">
+ 		INSERT INTO TICKET_INFO (TICKET_ID, NO, SEAT_ID, SCREEN_ID) VALUES(TICKET_ID_SEQ.NEXTVAL, #no#, #seat_id#, #screen_id#)
+ 	</insert>
+ 	
+ 	<select id="selectAllTicket" resultClass="dto">
+ 		SELECT * FROM TICKET_INFO
+ 	</select>
+ </sqlMap>

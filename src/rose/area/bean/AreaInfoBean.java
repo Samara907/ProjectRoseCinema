@@ -1,4 +1,4 @@
-package rose.theater.bean;
+package rose.area.bean;
 
 import java.util.List;
 
@@ -10,23 +10,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/theaters")
-public class TheaterInfoBean {
+@RequestMapping("/area")
+public class AreaInfoBean{
 	
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
 
-	@RequestMapping("/main.do")
-	public String TheaterMain(){
-
-		
-		return "/theaters/main.jsp";
-	}
-
 	@RequestMapping(value = "/get/list", method = RequestMethod.GET)
 	@ResponseBody
-	public List<Theater> getListByJson(){
-		List<Theater> theater_list = (List<Theater>)sqlMapClient.queryForList("theaters.getTheaterList", null);
-		return theater_list;
+	public List<Area> getAreaListJSON() {
+		List<Area> area_list = (List<Area>)sqlMapClient.queryForList("area.getAreaList", null);
+		return area_list;
 	}
 }

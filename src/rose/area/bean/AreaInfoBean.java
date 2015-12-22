@@ -2,6 +2,8 @@ package rose.area.bean;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
@@ -21,5 +23,13 @@ public class AreaInfoBean{
 	public List<Area> getAreaListJSON() {
 		List<Area> area_list = (List<Area>)sqlMapClient.queryForList("area.getAreaList", null);
 		return area_list;
+	}
+	
+	@RequestMapping(value = "/get/info", method = RequestMethod.GET)
+	@ResponseBody
+	public Area getAreaInfoJSON(HttpServletRequest req) {
+		int area_id = Integer.parseInt(req.getParameter("area_id"));
+		Area area_info = (Area)sqlMapClient.queryForObject("area.getAreaWithId", area_id);
+		return area_info;
 	}
 }

@@ -53,4 +53,12 @@ public class AreaInfoBean{
 		return getAreaList();
 	}
 	
+	// DELETE : delete area from area_id
+	@RequestMapping(value = "/area/{area_id}", method = RequestMethod.DELETE)
+	@ResponseBody
+	public List<Area> deleteAreaInfo(@PathVariable("area_id") int area_id) {
+		sqlMapClient.queryForObject("area.deleteAreaInfo", area_id);
+		// 기존 정보를 수정해도 리스트를 호출해서 보내준다. 리스트의 갱신 목적.
+		return getAreaList();
+	}
 }

@@ -8,7 +8,7 @@
 		select * from THEATER_INFO
 	</select>
 	<!-- Select with area_id -->
-	<select id="getTheaterithId" resultClass="Theater" parameterClass="int">
+	<select id="getTheaterInfo" resultClass="Theater" parameterClass="int">
 		select * from THEATER_INFO where theater_id = #id#
 	</select>
 	

@@ -13,6 +13,7 @@ Insert Ticket<p/>
 	<table border="1">
 		<tr>
 			<td>1.ticket_id</td>
+<<<<<<< HEAD
 			<td>NONSelected</td>
 		</tr>
 		<tr>
@@ -44,6 +45,32 @@ Insert Ticket<p/>
 
 	
 
+=======
+		</tr>
+		<tr>
+			<td>2.no</td>
+		</tr>
+		<tr>
+			<td>3.seat_id</td>
+		</tr>
+		<tr>
+			<td>4.screen_id</td>
+		<tr>
+			<td>5.screen_name</td>
+		</tr>
+		<tr>
+			<td>6.screen_type</td>
+		</tr>
+		<tr>
+			<td>7.screen_typename</td>
+		</tr>
+		<tr>
+			<td>8.theater_id</td>
+		</tr>
+		<tr>
+			<td>9.theater_name</td>
+		</tr>
+>>>>>>> branch 'base_branch' of https://github.com/Samara907/ProjectRoseCinema.git
 		<tr>
 			<td>10.line_no</td>
 		</tr>

@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>/test/genre/InsertGenre.jsp</title>
+<title>/ticket/admin/main.jsp</title>
 </head>
 <body>
-인서트
+<a href="/RoseCinema/InsertGenreForm.do"></a>
 </body>
 </html>

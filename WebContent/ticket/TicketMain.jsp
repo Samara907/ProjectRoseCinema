@@ -8,6 +8,6 @@
 </head>
 <body>
 Ticket Main.<p/>
-<a href="/RoseCinema/goTicketTestMain.do">Test Ticket</a>
+<a href="/RoseCinema/selectAllGenre.do">Test Ticket</a>
 </body>
 </html>

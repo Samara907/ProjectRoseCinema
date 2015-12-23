@@ -1,4 +1,4 @@
-package test.rose.bean;
+package rose.genre.type;
 
 public class GenreTypeDTO {
 

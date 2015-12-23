@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>/ticket/test/TestMain.jsp</title>
+<title>/ticket/main.jsp</title>
 </head>
 <body>
 Test Main<p/>
@@ -16,7 +16,11 @@ Test Main<p/>
 
 <a href="/RoseCinema/ticket">gogogogo</a>
 
+<c:forEach var="ticket_list" items="${ticket_list }">
+	${ticket_list.no }
+</c:forEach>
 
-asdfjdsagfadsgfasdjfgj
+
+dtg
 </body>
 </html>

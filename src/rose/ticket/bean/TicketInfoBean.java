@@ -15,12 +15,13 @@ public class TicketInfoBean {
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
 	
-	@RequestMapping(value = "/ticket", method = RequestMethod.GET)
-	public String getTicketList() {
+	@RequestMapping(value = "/ticket")
+	@ResponseBody
+	public List<Ticket> getTicketList() {
 		System.out.println("11111111");
 		@SuppressWarnings("unchecked")
 		List<Ticket> ticket_list = (List<Ticket>)sqlMapClient.queryForList("ticket.getTicketList", null);
 		System.out.println("22222222222222");
-		return "/ticket/main.jsp";
+		return ticket_list;
 	}
 }

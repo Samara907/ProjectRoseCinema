@@ -1,9 +1,8 @@
-package rose.ticket.info;
+package rose.ticket.bean;
 
 import java.util.Date;
 
-public class TicketInfoDTO {
-
+public class Ticket {
 	private int ticket_id;
 	private String no;
 	private int seat_id;
@@ -13,7 +12,7 @@ public class TicketInfoDTO {
 	private String screen_typename;
 	private int theater_id;
 	private String theater_name;
-	private char line_no;
+	private String line_no;
 	private int seat_no;
 	private int seat_x;
 	private int seat_y;
@@ -22,7 +21,7 @@ public class TicketInfoDTO {
 	private int price;
 	private Date buy_date;
 	private int member_id;
-	private int mcard_id;
+	private String mcard_id;
 	private int buy_type;
 	private int movie_id;
 	private String movie_name;
@@ -30,7 +29,6 @@ public class TicketInfoDTO {
 	private int start_time;
 	private int end_time;
 	private int coupon_id;
-	
 	public int getTicket_id() {
 		return ticket_id;
 	}
@@ -85,10 +83,10 @@ public class TicketInfoDTO {
 	public void setTheater_name(String theater_name) {
 		this.theater_name = theater_name;
 	}
-	public char getLine_no() {
+	public String getLine_no() {
 		return line_no;
 	}
-	public void setLine_no(char line_no) {
+	public void setLine_no(String line_no) {
 		this.line_no = line_no;
 	}
 	public int getSeat_no() {
@@ -139,10 +137,10 @@ public class TicketInfoDTO {
 	public void setMember_id(int member_id) {
 		this.member_id = member_id;
 	}
-	public int getMcard_id() {
+	public String getMcard_id() {
 		return mcard_id;
 	}
-	public void setMcard_id(int mcard_id) {
+	public void setMcard_id(String mcard_id) {
 		this.mcard_id = mcard_id;
 	}
 	public int getBuy_type() {

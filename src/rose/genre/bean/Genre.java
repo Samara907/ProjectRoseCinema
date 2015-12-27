@@ -1,6 +1,6 @@
-package rose.genre.type;
+package rose.genre.bean;
 
-public class GenreTypeDTO {
+public class Genre {
 
 	private int genre_id;
 	private String genre_name;

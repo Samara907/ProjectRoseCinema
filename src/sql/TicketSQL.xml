@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="ticket">
+	<typeAlias alias="Ticket" type="rose.ticket.bean.Ticket"/>
+	
+	<select id="getAllTicketList" resultClass="Ticket">
+		SELECT * FROM TICKET_INFO
+	</select>
+	
+	<select id="getTicketList" resultClass="Ticket" parameterClass="int">
+		SELECT * FROM TICKET_INFO WHERE MEMBER_ID = #member_id#
+	</select>
+	
+	<select id="getTicket" resultClass="Ticket" parameterClass="String">
+		SELECT * FROM TICKET_INFO WHERE NO = #no#
+	</select>
+	
+	<update id="updateState" parameterMap="int">
+		UPDATE TICKET_INFO SET STATE = #state#, CANCEL_DATE = #cancel_date# WHERE NO = #no#  
+	</update>
+	
+</sqlMap>

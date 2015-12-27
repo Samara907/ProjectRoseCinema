@@ -15,7 +15,7 @@ public class TicketInfoBean {
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
 	
-	@RequestMapping(value = "/ticket")
+	@RequestMapping(value = "/selectAllTicket")
 	@ResponseBody
 	public List<Ticket> getTicketList() {
 		System.out.println("11111111");
@@ -23,5 +23,10 @@ public class TicketInfoBean {
 		List<Ticket> ticket_list = (List<Ticket>)sqlMapClient.queryForList("ticket.getTicketList", null);
 		System.out.println("22222222222222");
 		return ticket_list;
+	}
+	
+	public Ticket getTicket() {
+		ticket
+		return Ticket;
 	}
 }

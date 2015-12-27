@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>/ticket/main.jsp</title>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" >
 $(document).ready(function() {
 	AjaxTicketList();
@@ -21,8 +21,8 @@ function AjaxTicketList() {
 		dataType:"JSON",
 		
 		success : function(result) {
-			$.each(result, function(key, vlaue) {
-				$('#result').append( "<p>" + "ticket_id :" + value.ticket_id + "</p>");
+			$.each(result, function(key, value) {
+				$("#result").append( "<p>" + "ticket_id :" + value.ticket_id + "</p>");
 			}); 
 		}
 	});
@@ -39,7 +39,7 @@ Test Main<p/>
 <div id="ajaxList">
 
 </div>
-<input type="button" value="리스트" onClick="viewAjaxList()">
+<input type="button" value="리스트" onClick="AjaxTicketList()">
 <a href="/RoseCinema/ticket">gogogogo</a>
 
 <div id="result">

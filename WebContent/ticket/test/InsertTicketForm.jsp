@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ ta %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -33,6 +34,7 @@ Insert Ticket<p/>
 		</tr>
 		<tr>
 			<td>8.theater_id</td>
+			
 		</tr>
 		<tr>
 			<td>9.theater_name</td>

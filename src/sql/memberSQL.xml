@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="member">
+   <typeAlias alias="dto" type="rose.DTO.MemberInfoDTO"/>
+   
+   <insert id="join" parameterClass="dto">
+      insert into MEMBER_INFO(member_id,id,pw,name,phone,email,gender,birth,address) 
+      	values(member_id_seq.nextval,#id#,#pw#,#name#,#phone#,#email#,#gender#,#birth#,#address#)
+   </insert>  <!-- 회원가입시 member_info table에 넣어주는 쿼리문 -->
+   
+   
+   
+   <select id="userCheck" resultClass="int" parameterClass="dto">
+      select count(*) from MEMBER_INFO where id =#id# and pw=#pw#
+   </select>  <!-- 로그인시 DB체크 쿼리문 -->
+   
+   
+   <select id="pwCheck" resultClass="int" parameterClass="dto">
+      select count(*) from MEMBER_INFO where id =#id# and pw=#pw#
+   </select>  <!-- 로그인시 DB체크 쿼리문 -->
+   
+    <delete id="delete" parameterClass="dto">
+    	delete from MEMBER_INFO where id=#id#
+    </delete>  <!-- 태그 이름 쿼리문에 따라 다르게 지정해줘야함!!!!! -->
+    
+    <select id="meminfo" resultClass="dto" parameterClass="dto">
+    	select * from member_info where id=#id#
+    </select>
+     
+    
+    <!-- 
+    <select id="mgradename" resultClass="String" parameterClass="java.util.map">
+	    select name from mgrade_type where mgrade_id = (
+			select mgrade_id from mgrade_history where member_id=#member_id# and year=#year#)	
+    </select>
+	-->
+    
+   
+</sqlMap> 

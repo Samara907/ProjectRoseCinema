@@ -1,8 +1,8 @@
-package rose.movie.bean;
+package rose.dto;
 
 import java.util.Date;
 
-public class Movie {
+public class MovieDTO {
 	private int movie_id;
 	private String movie_name;
 	private String movie_image;

@@ -7,4 +7,6 @@
 	<sqlMap resource="/sql/TicketSQL.xml"/>
 	<sqlMap resource="/sql/GenreSQL.xml"/>
 	<sqlMap resource="/sql/MovieSQL.xml"/>
+	<sqlMap resource="/sql/TheaterSQL.xml"/>
+	<sqlMap resource="/sql/AreaSQL.xml"/>
 </sqlMapConfig>

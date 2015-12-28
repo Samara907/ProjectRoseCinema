@@ -4,8 +4,44 @@
 	<typeAlias alias="Movie" type="rose.movie.bean.Movie"/>
 	
 	<!-- Select All -->
-	<select id="getMovieList" resultClass="Movie">
+	<select id="getAllMovieList" resultClass="Movie">
 		SELECT * FROM MOVIE_INFO
 	</select>
+	
+	<select id="getAllIdList" resultClass="int">
+		SELECT MOVIE_ID FROM MOVIE_INFO
+	</select>
+	
+	<select id="getAllNameList" resultClass="String">
+		SELECT MOVIE_NAME FROM MOVIE_INFO
+	</select>
+	
+	<select id="getMovieById" resultClass="Movie" parameterClass="int">
+		SELECT * FROM MOVIE_INFO WHERE MOVIE_ID = #movie_id#
+	</select>
+	
+	<select id="getMovieByName" resultClass="Movie" parameterClass="String">
+		SELECT * FROM MOVIE_INFO WHERE MOVIE_NAME = #movie_name#
+	</select>
+	
+	<select id="getIdByName" resultClass="int" parameterClass="String">
+		SELECT MOVIE_ID FROM MOVIE_INFO WHERE MOVIE_NAME = #movie_name#
+	</select>
+	
+	<select id="getNameById" resultClass="String" parameterClass="int">
+		SELECT MOVIE_NAME WHERE MOVIE_INFO WHERE MOVIE_ID = #movie_id#
+	</select>
+	
+	<insert id="insertMovie" parameterClass="Movie">
+		INSERT INTO MOVIE_INFO VALUES(MOVIE_ID_SEQ.MEXTVAL,#MOVIE_NAME#,#MOVIE_IMAGE#,#TICKET_RATE#,#SCORE#,#OPENDATE#,#DIRECTOR#,#ACTOR#,#GENRE_ID#,#SYNOPSIS#,#STILCUT#,#VIDEO#,#GRADE_ID#)
+	</insert>
+	
+	<delete id="deleteMovieById" parameterClass="int">
+		DELTE FROM MOVIE_INFO WHERE MOVIE_ID = #movie_id#
+	</delete>
+	
+	<delete id="deleteMovieByName" parameterClass="String">
+		DELTE FROM MOVIE_INFO WHERE MOVIE_NAME = #movie_name#
+	</delete>
 	
 </sqlMap>

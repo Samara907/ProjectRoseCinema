@@ -1,23 +1,23 @@
-package rose.movie.bean;
+package rose.bean;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@Controller
-public class MovieInfoBean {
+import rose.dto.GenreDTO;
+
+public class GenreTypeBean {
 
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
 	
-	@RequestMapping("/selectAllMovie")
+	@RequestMapping("/selectAllGenre")
 	@ResponseBody
-	public List<Movie> getMovieList() {
-		List<Movie> movie_list = (List<Movie>)sqlMapClient.queryForList("movie.getMovieList", null);
-		return movie_list;
+	public List<GenreDTO> getGenreList() {
+		List<GenreDTO> genre_list = (List<GenreDTO>)sqlMapClient.queryForList("genre.getGenreList",null);
+		return genre_list;
 	}
 }

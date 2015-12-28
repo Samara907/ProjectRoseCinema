@@ -23,7 +23,7 @@
    </script>
 </head>
 <BODY onload="begin()" bgcolor="<%=bodyback_c%>">
-<form name="myform" action="deletePro.do" method="post" onSubmit="return checkIt()">
+<form name="myform" action="deletePro" method="post" onSubmit="return checkIt()">
 <TABLE cellSpacing=1 cellPadding=1 width="260" border=1 align="center" >
   
   <TR height="30">

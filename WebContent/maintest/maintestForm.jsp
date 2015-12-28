@@ -10,14 +10,14 @@
 <body>
 
 회원가입 창으로 넘어가는 form 확인 ->
-<input type="button" value="회원가입" onclick="location.href='/RoseCinema/inputForm.do'">
+<input type="button" value="회원가입" onclick="location.href='/RoseCinema/inputForm'">
 
 <br/><br/>
 
 로그인 되는 form 확인->
 <br/>
 <a href="../member/loginForm.jsp"
-						onClick="window.open('/RoseCinema/loginForm.do', 'login', 'width = 280, height = 250'); return false">로그인</a>
+						onClick="window.open('/RoseCinema/loginForm', 'login', 'width = 280, height = 250'); return false">로그인</a>
 
 <br/><br/>
 
@@ -27,20 +27,20 @@
 	<h2>${sessionScope.memId} 님이 접속했습니다.! &nbsp; &nbsp; &nbsp; &nbsp;   이름: ${memName}, 회원넘버: ${memNum}  </h2> 
 	<hr>
 	회원정보수정, 회원탈퇴<-- 나중에 mypageForm.jsp에 이 a태그 갖다 붙이기!!!!  <br/>
-	<a href="/RoseCinema/modifyForm.do">회원정보수정</a>
+	<a href="/RoseCinema/modifyForm">회원정보수정</a>
 	
 	<a href=""
-	onClick="window.open('/RoseCinema/deleteForm.do', 'delete', 'width = 280, height = 280'); return false">
+	onClick="window.open('/RoseCinema/deleteForm', 'delete', 'width = 280, height = 280'); return false">
 	회원탈퇴 do로 만든 것</a>
 	
 	 
 	 
-	<a href="/RoseCinema/deleteForm.do">회원탈퇴</a>
+	<a href="/RoseCinema/deleteForm">회원탈퇴</a>
 	
 	
 	<hr>
 	
-	<form method="post" action="mypageForm.do" name="mypage">
+	<form method="post" action="mypageForm" name="mypage">
 		submit버튼으로 만들거:  <input type="submit" name="confirm" value="마이페이지">
 		<input type=hidden name="memNum" value="${memNum}" />
 		<input type=hidden name="nowYear" value="${nowYear}" />

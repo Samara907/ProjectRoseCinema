@@ -55,7 +55,7 @@
 
 <body bgcolor="<%=bodyback_c%>">
 
-<form method="post" action="inputPro.do" name="userinput" onSubmit="return checkIt()">
+<form method="post" action="inputPro" name="userinput" onSubmit="return checkIt()">
   <table width="600" border="1" cellspacing="0" cellpadding="3" align="center" >
     <tr> 
     <td colspan="2" height="39" align="center" bgcolor="<%=value_c%>" >

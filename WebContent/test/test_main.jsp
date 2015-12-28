@@ -7,6 +7,6 @@
 <title>/test/test_main.jsp</title>
 </head>
 <body>
-	<a href="/RoseCinema/testarea.do">지역정보추가</a>
+	<a href="/RoseCinema/testarea">지역정보추가</a>
 </body>
 </html>

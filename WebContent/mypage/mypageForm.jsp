@@ -21,7 +21,7 @@
 	<hr>
 	올해(${nowYear})년도 고객님의 등급은 [[[${grade}]]]입니다.<br/>
 	
-	<form method="post" action="gradehistoryForm.do" name="gradehistory">
+	<form method="post" action="gradehistoryForm" name="gradehistory">
 		<input type=hidden name="memNum" value="${memNum}" />
 		<input type=hidden name="nowYear" value="${nowYear}" />
 			<input type="submit" name="confirm" value="MY 지난등급이력 보기 submit">

@@ -32,14 +32,14 @@ public class MemberBean {
 	
 	
 	//********회원가입
-	@RequestMapping("/inputForm.do")
+	@RequestMapping("/inputForm")
 	public String inputform(){
 		System.out.println("회원가입form");
 		
 		return "/member/inputForm.jsp";
 	}
 	
-	@RequestMapping("/inputPro.do")
+	@RequestMapping("/inputPro")
 	public String inputpro(MemberInfoDTO dto, HttpServletRequest request){ //로그인 정보 가져오는 dto
 		//sqlMapClient.queryForObject("member.join", dto);
 	
@@ -50,14 +50,14 @@ public class MemberBean {
 	}
 	
 	//*****로그인
-	@RequestMapping("/loginForm.do")
+	@RequestMapping("/loginForm")
 	public String loginform(){
 		System.out.println("form");
 		
 		return "/member/loginForm.jsp";
 	}
 	
-	@RequestMapping("/loginPro.do")
+	@RequestMapping("/loginPro")
 	public String loginpro(MemberInfoDTO dto, HttpSession session, HttpServletRequest request){ //로그인 정보 가져오는 dto, 세션확인하는 session 매개변수 가져욤
 		check = (Integer)sqlMapClient.queryForObject("member.userCheck", dto);
 		
@@ -85,7 +85,7 @@ public class MemberBean {
 	
 	
 	//******회원정보수정
-	@RequestMapping("/modifyForm.do")
+	@RequestMapping("/modifyForm")
 	public String modifyform(HttpSession session){
 		
 		//세션값이랑 맞는 id값 불러와서 그 값들 넣어주기. request.setAttribute("name", dto.getName()); 이용
@@ -97,13 +97,13 @@ public class MemberBean {
 	
 	
 	//*******회원탈퇴
-	@RequestMapping("/deleteForm.do")
+	@RequestMapping("/deleteForm")
 	public String deleteform(){
 		
 		return "/member/deleteForm.jsp";		
 	}	
 
-	@RequestMapping("/deletePro.do")
+	@RequestMapping("/deletePro")
 	public String deletepro(MemberInfoDTO dto, HttpSession session){ 
 		
 		session.setAttribute("memId", dto.getId()); //이거 나중에 빼고 함 해보기!!
@@ -147,7 +147,7 @@ public class MemberBean {
 	}
 	
 	
-	@RequestMapping("/mypageForm.do")
+	@RequestMapping("/mypageForm")
 	public String mypageform(MemberInfoDTO dto, HttpServletRequest request){
 		
 		//회원아이디, 회원이름불러오기
@@ -171,7 +171,7 @@ public class MemberBean {
 	}
 	
 	
-	@RequestMapping("/gradehistoryForm.do")
+	@RequestMapping("/gradehistoryForm")
 	public String gradehistoryform(MemberInfoDTO dto, HttpServletRequest request){	
 		
 		String memN =request.getParameter("memNum");
@@ -205,7 +205,7 @@ public class MemberBean {
 	
 	
 	/*
-	@RequestMapping("sdkjlfhsdkf.do")
+	@RequestMapping("sdkjlfhsdkf")
 	public String vodsfosdf() {
 		f
 		sdfsdl

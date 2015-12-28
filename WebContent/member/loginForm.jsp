@@ -30,7 +30,7 @@
    </script>
 </head>
 <BODY onload="begin()" bgcolor="<%=bodyback_c%>">
-<form name="myform" action="loginPro.do" method="post" onSubmit="return checkIt()">
+<form name="myform" action="loginPro" method="post" onSubmit="return checkIt()">
 <TABLE cellSpacing=1 cellPadding=1 width="260" border=1 align="center" >
   
   <TR height="30">

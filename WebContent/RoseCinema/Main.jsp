@@ -76,7 +76,7 @@ a:HOVER {
 			<li><a>제휴/광고/부대사업 문의</a></li>
 			<li><a>이용약관</a></li>
 			<li><a>개인정보취급방침</a></li>
-			<li><a>고객센터</a></li>
+			<li><a href="/RoseCinema/showCenterMenu">고객센터</a></li>
 		</ul>
 	</div>
 </body>

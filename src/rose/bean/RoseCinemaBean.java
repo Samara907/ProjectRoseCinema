@@ -7,7 +7,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class RoseCinemaBean {
 
 	@RequestMapping("/showMovieMenu")
-	public String showMenu() {
+	public String showMovieMenu() {
 		return "/movie/movieList.jsp";
+	}
+	
+	@RequestMapping("/showCenterMenu")
+	public String showCenterMenu() {
+		return "/RoseCinema/center/centerMenu.jsp";
+	}
+	
+	@RequestMapping("/insertFaqForm")
+	public String insertFaqForm() {
+		return "/RoseCinema/center/faq/insertFaqForm.jsp";
 	}
 }

@@ -9,4 +9,5 @@
 	<sqlMap resource="/sql/MovieSQL.xml"/>
 	<sqlMap resource="/sql/TheaterSQL.xml"/>
 	<sqlMap resource="/sql/AreaSQL.xml"/>
+	<sqlMap resource="/sql/FaqSQL.xml"/>
 </sqlMapConfig>

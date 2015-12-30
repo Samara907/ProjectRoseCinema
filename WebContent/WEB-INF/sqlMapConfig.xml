@@ -8,5 +8,7 @@
 	<sqlMap resource="/sql/TheatersSQL.xml"/>
 	<sqlMap resource="/sql/memberSQL.xml"/>
 	<sqlMap resource="/sql/mypageSQL.xml"/>	
+	<sqlMap resource="/sql/GenreSQL.xml"/>
+	
 </sqlMapConfig>
 

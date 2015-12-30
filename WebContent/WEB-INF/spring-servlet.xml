@@ -15,10 +15,8 @@
 		http://www.springframework.org/schema/aop/spring-aop.xsd"
 >		
 
+		<context:component-scan base-package="rose.bean"/>
 		<context:component-scan base-package="test.rose.bean"/>
-		<context:component-scan base-package="rose.area.bean"/>
-		<context:component-scan base-package="rose.theater.bean"/>
-		<context:component-scan base-package="rose.ticket.bean"/>
 		
 	
 		<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">

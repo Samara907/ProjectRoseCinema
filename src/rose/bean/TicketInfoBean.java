@@ -38,8 +38,8 @@ public class TicketInfoBean {
 	@RequestMapping("/cancelTicket")
 	@ResponseBody
 	public int cancelTicket(String no) {
-		int isCancel = (int)sqlMapClient.queryForObject("ticket.cancelTicket", no);
-		return isCancel;
+		int success = (int)sqlMapClient.queryForObject("ticket.cancelTicket", no);
+		return success;
 	}
 	
 	@RequestMapping("/buyTicket")

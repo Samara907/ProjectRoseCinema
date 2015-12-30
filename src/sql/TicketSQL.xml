@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 <sqlMap namespace="ticket">
-	<typeAlias alias="Ticket" type="rose.ticket.bean.Ticket"/>
+	<typeAlias alias="Ticket" type="rose.dto.TicketDTO"/>
 	
 	<select id="getAllTicketList" resultClass="Ticket">
 		SELECT * FROM TICKET_INFO
@@ -11,16 +11,20 @@
 		SELECT * FROM TICKET_INFO WHERE MEMBER_ID = #member_id#
 	</select>
 	
-	<select id="getTicket" resultClass="Ticket" parameterClass="String">
+	<select id="getTicketByNo" resultClass="Ticket" parameterClass="String">
 		SELECT * FROM TICKET_INFO WHERE NO = #no#
 	</select>
 	
-	<update id="cancelTicket" parameterMap="String">	
-		UPDATE TICKET_INFO SET ISCANCEL = #isCancel#, CANCEL_DATE = SYSOUT WHERE NO = #no#  
+	<select id="getTicketById" resultClass="Ticket" parameterClass="int">
+		SELECT * FROM TICKET_INFO WHERE TICKET_ID = #ticket_id#
+	</select>
+	
+	<update id="cancelTicket" parameterClass="String">	
+		UPDATE TICKET_INFO SET ISCANCEL = 'YES', CANCELDATE = SYSDATE WHERE NO = #no#  
 	</update>
 	
-	<insert id="buyTicket" parameterMap="ticket"> 
-		INSERT INTO TICKET_INFO VALUES(TICKET_ID_SEQ.NEXTVAL,#NO#,#SEAT_ID#,#SCREEN_ID#,#MEMBER_ID#,#MCARD_ID#,#COUPON_ID#,#MOVIE#,#THEATER#,#SCREEN#,#TICKETDATE#,#COUNT#,#SEAT1#,#SEAT2#,#SEAT3#,#SEAT4#,#SEAT5#,#SEAT6#,#SEAT7#,#SEAT8#,#BUYDATE#,#BUYSUM#,#BUYTYPE#,#PHONE#,#ISCANCEL#,#CANCELDATE#)
+	<insert id="buyTicket" parameterClass="Ticket"> 
+		INSERT INTO TICKET_INFO VALUES(TICKET_ID_SEQ.NEXTVAL,#no#,#seat_id#,#screen_id#,#member_id#,#mcard_id#,#coupon_id#,#movie#,#theater#,#screen#,#ticketDate#,#count#,#seat1#,#seat2#,#seat3#,#seat4#,#seat5#,#seat6#,#seat7#,#seat8#,#buyDate#,#buySum#,#buyType#,#phone#,#isCancel#,#cancelDate#)
 	</insert>
 	
 </sqlMap>

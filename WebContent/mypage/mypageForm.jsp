@@ -17,7 +17,7 @@
 
 	<font size = "8"> 회원이름: ${memName} </font> 
 	<br/>
-	<font size="5">회원아이디: ${memId}</font>
+	<font size="5">회원아이디: ${memId} , ${memNum}</font>
 	<hr>
 	올해(${nowYear})년도 고객님의 등급은 [[[${grade}]]]입니다.<br/>
 	
@@ -30,8 +30,12 @@
 	
 	
 	*내 멤버쉽 포인트: [DB:mpoint_history의 point데이터 이용]점<br/>
-	<input type="button" value="내 멤버쉽 정보 보기" onclick="location.href='mypage/membership/meminfoForm.jsp'">
-	 <--여기 클릭하면 이 안에 멤버쉽 카드 정보, 멤버쉽 카드 등록/해지 기능, 멤버쉽 포인트 정보, 멤버쉽 사용 내역 등 나온다.
+	
+	<form method="post" action="mypage/membership/meminfoForm.jsp" name="meminfo">
+		<input type=hidden name="memNum" value="${memNum}" />
+		<input type="submit" value="내 멤버쉽 정보 보기" > <!-- onclick="location.href='mypage/membership/meminfoForm.jsp'" -->
+		 -->여기 클릭하면 이 안에 멤버쉽 카드 정보, 멤버쉽 카드 등록/해지 기능, 멤버쉽 포인트 정보, 멤버쉽 사용 내역 등 나온다.
+	</form>
 	
 	<hr>
 	

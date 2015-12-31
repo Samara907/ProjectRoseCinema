@@ -2,8 +2,9 @@
  
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 <sqlMap namespace="mypage">
-   <typeAlias alias="dto" type="rose.DTO.MemberInfoDTO"/>
-   
+   <typeAlias alias="dto" type="rose.DTO.MemberInfoDTO"/>   
+   <typeAlias alias="pointDTO" type="rose.DTO.MpointHistoryDTO"/>
+   <typeAlias alias="mgradeDTO" type="rose.DTO.MgradeHistoryDTO"/>
   
   
    <select id="userCheck" resultClass="int" parameterClass="dto">
@@ -16,10 +17,16 @@
 			select mgrade_id from mgrade_history where member_id=#memNum# and year=#nowYear#)	
     </select>
     
-    <select id="mgradehistory" resultClass="String" parameterClass="String">
-    	select name,year from mgrade_type where mgrade_id =
-     		(select mgrade_id from mgrade_history where member_id = #memNum#)
-    </select>
+    <select id="mgradehistory" resultClass="mgradeDTO" parameterClass="String">
+    	select * from $hitoryId$
+    </select>  <!-- 등급이름들 뽑아내는 쿼리 -->
+    
+    
+    <!-- 
+    <select id="mpointhistory" resultClass="pointDTO" parameterClass="pointDTO">
+    	select * from MPOINT_HISTORY where member_id = #memNum#
+    </select> 포인트 내역 게시판 형태로 불러오기, memNum은 히든으로 넘겨주기   -->
+    
     
     
     

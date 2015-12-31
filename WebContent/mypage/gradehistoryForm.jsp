@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@page import = "java.util.*" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -27,21 +28,21 @@ int nowYear=cal.get(Calendar.YEAR);
   	</tr>
   	
   	<tr>  	
-  		<td>년도</td>   		
-  		<%for(int i=0; i<10;i++){%>
-  			<td> <%=nowYear-i%> </td>		
-  		<%}%>
+  		<td>년도</td>   
+  		<c:forEach var="dto" items="${history}">
+  			<td> ${dto.year} </td>
+  		</c:forEach>		
   	</tr>
   	
   	
   	<tr> 		 	
   		<td>등급</td>
-  		<%for(int i=0; i<10;i++){%>
-  			<td></td>		
-  		<%}%> 
+  		<c:forEach var="dto" items="${history}">
+  			<td> ${dto.mgrade_id} </td>
+  		</c:forEach>
   	</tr>
   	
-<form></form>
+
   	
   	
   	

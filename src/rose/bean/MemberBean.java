@@ -2,6 +2,7 @@ package rose.bean;
 
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -44,6 +45,10 @@ public class MemberBean {
 		//sqlMapClient.queryForObject("member.join", dto);
 	
 		sqlMapClient.insert("member.join", dto);
+		
+		String hitoryId = dto.getId()+"_hitory";
+		sqlMapClient.insert("member.hitory", hitoryId);
+		
 		request.setAttribute("name", dto.getName()); 
 
 		return "/member/inputPro.jsp";
@@ -172,29 +177,11 @@ public class MemberBean {
 	
 	
 	@RequestMapping("/gradehistoryForm")
-	public String gradehistoryform(MemberInfoDTO dto, HttpServletRequest request){	
-		
-		String memN =request.getParameter("memNum");
-		String nowY=request.getParameter("nowYear"); 
-		
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("memNum", memN);
-		map.put("nowYear", nowY);
-		
-		/*
-		 for(int i= nowYear; i< nowYear-5;  i++){
-			 
-			 map.put("nowYear", nowY);
-			 
-			 if(10년 이하로 회원이면, mgradehistory테이블에 ){
-				 System.out.println("정보 없음");
-			 }
-		 
-		 		String grade = (String) sqlMapClient.queryForObject("mypage.mgradename", map);
-		 }*/ 
-		
-		//for문으로 queryforobject돌리기. 
-		
+	public String gradehistoryform(HttpSession session , HttpServletRequest request){	
+		String id = (String)session.getAttribute("memId");
+		id += "_hitory";
+		List list = sqlMapClient.queryForList("mypage.mgradehistory", id);
+		request.setAttribute("history", list);
 		return "/mypage/gradehistoryForm.jsp";
 	}
 	

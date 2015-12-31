@@ -7,6 +7,6 @@
 <title>Center Menu</title>
 </head>
 <body>
-	<button onclick="window.open('/RoseCinema/insertFaqForm', 'insertFaqForm', 'width=430,height=500,location=no,status=no,scrollbars=yes')">insert Faq</button>
+	<button onclick="window.open('/RoseCinema/insertFaqForm', 'insertFaqForm', 'width=300,height=300,location=no,status=no,scrollbars=yes')">insert Faq</button>
 </body>
 </html>

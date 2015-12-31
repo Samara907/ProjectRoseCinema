@@ -17,7 +17,9 @@
 
 		<context:component-scan base-package="rose.bean"/>
 		<context:component-scan base-package="rose.theater.bean"/>
-			<context:component-scan base-package="test.rose.bean"/>
+		<context:component-scan base-package="test.rose.bean"/>
+		
+
 
 		
 		

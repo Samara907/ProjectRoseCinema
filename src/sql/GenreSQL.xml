@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="genre">
+	
+	<typeAlias alias="genre" type="rose.DTO.GenreTypeDTO"/>
+	<!-- Select All -->
+	<select id="getGenreList" resultClass="genre" >
+		select * from GENRE_TYPE
+	</select>
+	<!-- Select with area_id -->
+	<select id="getGenreInfo" resultClass="Genre" parameterClass="int">
+		select * from GENRE_TYPE where genre_id = #id#
+	</select>
+	
+</sqlMap>

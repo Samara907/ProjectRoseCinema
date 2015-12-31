@@ -10,7 +10,7 @@ public class MovieInfoDTO {
 	private int ticket_rate;
 	private int score;
 	private String opendate;
-	private String drictor;
+	private String director;
 	private String actor;
 	private int genre_id;
 	private String synopsis;
@@ -54,11 +54,11 @@ public class MovieInfoDTO {
 	public void setOpendate(String opendate) {
 		this.opendate = opendate;
 	}
-	public String getDrictor() {
-		return drictor;
+	public String getDirector() {
+		return director;
 	}
-	public void setDrictor(String drictor) {
-		this.drictor = drictor;
+	public void setDirector(String director) {
+		this.director = director;
 	}
 	public String getActor() {
 		return actor;

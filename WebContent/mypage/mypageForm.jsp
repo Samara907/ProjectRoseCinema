@@ -1,66 +1,66 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
-**¸¶ÀÌÆäÀÌÁö**
+**ë§ˆì´íŽ˜ì´ì§€**
 
 
 
 <br>
 
-	<font size = "8"> È¸¿øÀÌ¸§: ${memName} </font> 
+	<font size = "8"> íšŒì›ì´ë¦„: ${memName} </font> 
 	<br/>
-	<font size="5">È¸¿ø¾ÆÀÌµð: ${memId} , ${memNum}</font>
+	<font size="5">íšŒì›ì•„ì´ë””: ${memId} , ${memNum}</font>
 	<hr>
-	¿ÃÇØ(${nowYear})³âµµ °í°´´ÔÀÇ µî±ÞÀº [[[${grade}]]]ÀÔ´Ï´Ù.<br/>
+	ì˜¬í•´(${nowYear})ë…„ë„ ê³ ê°ë‹˜ì˜ ë“±ê¸‰ì€ [[[${grade}]]]ìž…ë‹ˆë‹¤.<br/>
 	
 	<form method="post" action="gradehistoryForm" name="gradehistory">
 		<input type=hidden name="memNum" value="${memNum}" />
 		<input type=hidden name="nowYear" value="${nowYear}" />
-			<input type="submit" name="confirm" value="MY Áö³­µî±ÞÀÌ·Â º¸±â submit">
+			<input type="submit" name="confirm" value="MY ì§€ë‚œë“±ê¸‰ì´ë ¥ ë³´ê¸° submit">
 		<br/><br/>
 	</form>
 	
 	
-	*³» ¸â¹ö½± Æ÷ÀÎÆ®: [DB:mpoint_historyÀÇ pointµ¥ÀÌÅÍ ÀÌ¿ë]Á¡<br/>
+	*ë‚´ ë©¤ë²„ì‰½ í¬ì¸íŠ¸: [DB:mpoint_historyì˜ pointë°ì´í„° ì´ìš©]ì <br/>
 	
 	<form method="post" action="mypage/membership/meminfoForm.jsp" name="meminfo">
 		<input type=hidden name="memNum" value="${memNum}" />
-		<input type="submit" value="³» ¸â¹ö½± Á¤º¸ º¸±â" > <!-- onclick="location.href='mypage/membership/meminfoForm.jsp'" -->
-		 -->¿©±â Å¬¸¯ÇÏ¸é ÀÌ ¾È¿¡ ¸â¹ö½± Ä«µå Á¤º¸, ¸â¹ö½± Ä«µå µî·Ï/ÇØÁö ±â´É, ¸â¹ö½± Æ÷ÀÎÆ® Á¤º¸, ¸â¹ö½± »ç¿ë ³»¿ª µî ³ª¿Â´Ù.
+		<input type="submit" value="ë‚´ ë©¤ë²„ì‰½ ì •ë³´ ë³´ê¸°" > <!-- onclick="location.href='mypage/membership/meminfoForm.jsp'" -->
+		 -->ì—¬ê¸° í´ë¦­í•˜ë©´ ì´ ì•ˆì— ë©¤ë²„ì‰½ ì¹´ë“œ ì •ë³´, ë©¤ë²„ì‰½ ì¹´ë“œ ë“±ë¡/í•´ì§€ ê¸°ëŠ¥, ë©¤ë²„ì‰½ í¬ì¸íŠ¸ ì •ë³´, ë©¤ë²„ì‰½ ì‚¬ìš© ë‚´ì—­ ë“± ë‚˜ì˜¨ë‹¤.
 	</form>
 	
 	<hr>
 	
-**³» ¿µÈ­ ³»¿ª** <br/>
+**ë‚´ ì˜í™” ë‚´ì—­** <br/>
 	
 	
-	**¿¹¸Å ³»¿ª<br/>
+	**ì˜ˆë§¤ ë‚´ì—­<br/>
 	
 	 <select id="ticketinghistory">
-		<option value="latest">¿¹¸Å³»¿ª</option>
-		<option value="before">Áö³­³»¿ª</option>
-		<option value="cancel">Ãë¼Ò³»¿ª</option>
+		<option value="latest">ì˜ˆë§¤ë‚´ì—­</option>
+		<option value="before">ì§€ë‚œë‚´ì—­</option>
+		<option value="cancel">ì·¨ì†Œë‚´ì—­</option>
 	</select>
 
 	<table border="1">	 
 		 
 		 <tr>
-		 	<td>NO</td><td>¿¹¸Å¹øÈ£</td><td>¿µÈ­¸í</td><td>ÁöÁ¡</td><td>»ó¿µÀÏ½Ã</td><td>¿¹¸ÅÀÏ</td><td>¿¹¸ÅÃë¼Ò¹öÆ°[DB:»èÁ¦Äõ¸®]</td>
+		 	<td>NO</td><td>ì˜ˆë§¤ë²ˆí˜¸</td><td>ì˜í™”ëª…</td><td>ì§€ì </td><td>ìƒì˜ì¼ì‹œ</td><td>ì˜ˆë§¤ì¼</td><td>ì˜ˆë§¤ì·¨ì†Œë²„íŠ¼[DB:ì‚­ì œì¿¼ë¦¬]</td>
 		 </tr>
 		 
 		 <tr>
 		 
 		 	<td colspan="7">
-		 	[DB:¿¹¸ÅÅ×ÀÌºí¿¡¼­ °¢°¢ÀÇ select typeº°·Î °Ô½ÃÆÇÇüÅÂ·Î ÂÒ¸£¸¤ ºÒ·¯¿À±â!!]<br/>
-		 	'¿µÈ­¸í' Å¬¸¯ÇÏ¸é ÇØ´ç ¿µÈ­Á¤º¸ÆäÀÌÁö·Î ³Ñ¾î°¡°í, ¿¹¸Å¹øÈ£ Å¬¸¯ÇÏ¸é ÇØ´ç ¿¹¸Å»ó¼¼Á¤º¸ ÆäÀÌÁö·Î ³Ñ¾î°¡¾ß ÇÔ!! 
+		 	[DB:ì˜ˆë§¤í…Œì´ë¸”ì—ì„œ ê°ê°ì˜ select typeë³„ë¡œ ê²Œì‹œíŒí˜•íƒœë¡œ ì«˜ë¥´ë¥µ ë¶ˆëŸ¬ì˜¤ê¸°!!]<br/>
+		 	'ì˜í™”ëª…' í´ë¦­í•˜ë©´ í•´ë‹¹ ì˜í™”ì •ë³´íŽ˜ì´ì§€ë¡œ ë„˜ì–´ê°€ê³ , ì˜ˆë§¤ë²ˆí˜¸ í´ë¦­í•˜ë©´ í•´ë‹¹ ì˜ˆë§¤ìƒì„¸ì •ë³´ íŽ˜ì´ì§€ë¡œ ë„˜ì–´ê°€ì•¼ í•¨!! 
 		 	</td>
 		 </tr>
 	 
@@ -68,22 +68,22 @@
 	
 	<hr>
 	
-	**³ªÀÇ ¹«ºñ È÷½ºÅä¸®<br/>
+	**ë‚˜ì˜ ë¬´ë¹„ ížˆìŠ¤í† ë¦¬<br/>
 	
-	³»°¡ º» ¿µÈ­ ¸®½ºÆ® - °¢ ¿µÈ­¸¶´Ù »ó¼¼Á¤º¸ º¸±â, º°Á¡/°¨»óÆò ´Þ±â ±â´É, »ó¼¼Á¤º¸º¸±â ÆäÀÌÁö Ãß°¡ÇØ¾ßÇÔ!!! ÆäÀÌÁö Ãß°¡ÇÒ °Í ¸¹À½!!
+	ë‚´ê°€ ë³¸ ì˜í™” ë¦¬ìŠ¤íŠ¸ - ê° ì˜í™”ë§ˆë‹¤ ìƒì„¸ì •ë³´ ë³´ê¸°, ë³„ì /ê°ìƒí‰ ë‹¬ê¸° ê¸°ëŠ¥, ìƒì„¸ì •ë³´ë³´ê¸° íŽ˜ì´ì§€ ì¶”ê°€í•´ì•¼í•¨!!! íŽ˜ì´ì§€ ì¶”ê°€í•  ê²ƒ ë§ŽìŒ!!
 	
 	<br/><br/>
 	
 	
-	**ÇöÀå¿¡¼­ ¸â¹ö½±¾øÀÌ ¿¹¸Å¸¦ ÇÏ¼Ì³ª¿ä? ¿µ¼öÁõ ÇÏ´ÜÀÇ ¿¹¸Å¹øÈ£¸¦ µî·ÏÇÏ°í ³» ¹«ºñ È÷½ºÅä¸®¿¡ ±â·Ï&°¨»óÆòÀ» ½áº¸¼¼¿ä!<br/>
-	µî·ÏÇÏ±â
+	**í˜„ìž¥ì—ì„œ ë©¤ë²„ì‰½ì—†ì´ ì˜ˆë§¤ë¥¼ í•˜ì…¨ë‚˜ìš”? ì˜ìˆ˜ì¦ í•˜ë‹¨ì˜ ì˜ˆë§¤ë²ˆí˜¸ë¥¼ ë“±ë¡í•˜ê³  ë‚´ ë¬´ë¹„ ížˆìŠ¤í† ë¦¬ì— ê¸°ë¡&ê°ìƒí‰ì„ ì¨ë³´ì„¸ìš”!<br/>
+	ë“±ë¡í•˜ê¸°
 	<table border="1">
 		<tr>
-			<td>¿µ¼öÁõ ¹øÈ£</td> <td><input type="text" size="15"></td>
+			<td>ì˜ìˆ˜ì¦ ë²ˆí˜¸</td> <td><input type="text" size="15"></td>
 		</tr>
 		<tr>
 			<td colspan="2">
-			<input type="button" value="µî·ÏÇÏ±â">[DB:´©¸£¸é <---DB¿¡¼­ Á¶Á¤ ÇÊ¿äÇÒµí!!! ¿¹¸Å Å×ÀÌºí¿¡¼­ ºñÈ¸¿ø±¸¸Å ±¸ºÐ ÄÃ·³ÀÌ ´Ù½Ã È¸¿ø±¸¸Å·Î ¹Ù²î´Â µîÀ¸·Î]
+			<input type="button" value="ë“±ë¡í•˜ê¸°">[DB:ëˆ„ë¥´ë©´ <---DBì—ì„œ ì¡°ì • í•„ìš”í• ë“¯!!! ì˜ˆë§¤ í…Œì´ë¸”ì—ì„œ ë¹„íšŒì›êµ¬ë§¤ êµ¬ë¶„ ì»¬ëŸ¼ì´ ë‹¤ì‹œ íšŒì›êµ¬ë§¤ë¡œ ë°”ë€ŒëŠ” ë“±ìœ¼ë¡œ]
 			</td>
 		</tr>
 	</table>

@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=euc-kr"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ include file="/view/color.jsp"%>
 <html>
-<head><title>·Î±×ÀÎ</title>
+<head><title>ë¡œê·¸ì¸</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 
    <script language="javascript">
@@ -11,12 +11,12 @@
        }
        function checkIt(){
          if(!document.myform.id.value){
-           alert("¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏÁö ¾ÊÀ¸¼Ì½À´Ï´Ù.");
+           alert("ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì§€ ì•Šìœ¼ì…¨ìŠµë‹ˆë‹¤.");
            document.myform.id.focus();
            return false;
          }
          if(!document.myform.passwd.value){
-           alert("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏÁö ¾ÊÀ¸¼Ì½À´Ï´Ù.");
+           alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì§€ ì•Šìœ¼ì…¨ìŠµë‹ˆë‹¤.");
            document.myform.passwd.focus();
            return false;
          }        
@@ -34,24 +34,24 @@
 <TABLE cellSpacing=1 cellPadding=1 width="260" border=1 align="center" >
   
   <TR height="30">
-    <TD colspan="2" align="middle" bgcolor="<%=title_c%>"><STRONG>È¸¿ø·Î±×ÀÎ</STRONG></TD></TR>
+    <TD colspan="2" align="middle" bgcolor="<%=title_c%>"><STRONG>íšŒì›ë¡œê·¸ì¸</STRONG></TD></TR>
   
   <TR height="30">
-    <TD width="110" bgcolor="<%=title_c%>" align=center>¾ÆÀÌµğ</TD>
+    <TD width="110" bgcolor="<%=title_c%>" align=center>ì•„ì´ë””</TD>
     <TD width="150" bgcolor="<%=value_c%>" align=center>
        <INPUT type="text" name="id" size="15" maxlength="12"></TD></TR>
   <TR height="30">
-    <TD width="110" bgcolor="<%=title_c%>" align=center>ºñ¹Ğ¹øÈ£</TD>
+    <TD width="110" bgcolor="<%=title_c%>" align=center>ë¹„ë°€ë²ˆí˜¸</TD>
     <TD width="150" bgcolor="<%=value_c%>" align=center>
       <INPUT type=password name="pw"  size="15" maxlength="12"></TD></TR>
   <TR height="30">
     <TD colspan="2" align="middle" bgcolor="<%=title_c%>" >
-      <INPUT type=submit value="·Î±×ÀÎ"> 
-      <INPUT type=reset value="´Ù½ÃÀÔ·Â">
+      <INPUT type=submit value="ë¡œê·¸ì¸"> 
+      <INPUT type=reset value="ë‹¤ì‹œì…ë ¥">
       
-      <input type="button" value="È¸¿ø°¡ÀÔ" onclick="log()">
+      <input type="button" value="íšŒì›ê°€ì…" onclick="log()">
       
-      <!-- <input type="button" value="È¸¿ø°¡ÀÔ" onclick="javascript:window.opener='inputForm.jsp'">-->
+      <!-- <input type="button" value="íšŒì›ê°€ì…" onclick="javascript:window.opener='inputForm.jsp'">-->
       
       </TD></TR>
 </TABLE>

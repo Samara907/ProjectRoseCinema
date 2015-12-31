@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <body>
@@ -8,71 +8,71 @@
 	<table border="1" align="center">
 	<tr>
 		<td>
-			<font>�̺�Ʈ �з�</font>
+			<font>이벤트 분류</font>
 		</td>
 		<td colspan="3" cellspacing="0" cellpadding="0">
 		<select name="event_id">
-		    <option>�����λ�</option>
-		    <option>����</option>
+		    <option>무대인사</option>
+		    <option>쿠폰</option>
 		    <option>1+1</option>
-		    <option>�ַ�Ż��</option>
+		    <option>솔로탈출</option>
 	    </select>
 	    </td>
 	 </tr>
 	 <tr>
-	 	<td>���۳�¥</td>
+	 	<td>시작날짜</td>
 	 	<td>
 			<input type="date" name="estart_date">
 		</td>
-		<td>���ᳯ¥</td>
+		<td>종료날짜</td>
 		<td>
 			<input type="date" name="eend_date">
 		</td>
 	</tr>
 	<tr>
-		<td>�̺�Ʈ��</td>
+		<td>이벤트명</td>
 		<td colspan="3">
 			<input type="text" name="event_name">
 		</td>
 	</tr>
 	<tr>
-		<td>�̹���</td>
+		<td>이미지</td>
 		<td colspan="3">
 			<input type="file" name="event_image">
 		</td>
 	</tr>
 	<tr>
-		<td>������</td>
+		<td>쿠폰명</td>
 		<td colspan="3">
 			<input type="text" name="coupon_name">
 		</td>
 	</tr>
 	<tr>
-		<td>�������۳�¥</td>
+		<td>쿠폰시작날짜</td>
 	 	<td>
 			<input type="date" name="cstart_date">
 		</td>
-		<td>�������ᳯ¥</td>
+		<td>쿠폰종료날짜</td>
 		<td>
 			<input type="date" name="cend_date">
 		</td>
 	</tr>
 	<tr>
-		<td>�ַ�Ż�� �ο�</td>
+		<td>솔로탈출 인원</td>
 		<td>
 			<input type="text" name="event_count">
 		</td>
 	
-		<td>��ȭ����</td>
+		<td>영화정보</td>
 		<td>
 			<select name="screen_id">
-				<option>�������</option>
-				<option>��Ÿ����:�������</option>
+				<option>히말라야</option>
+				<option>스타워즈:깨어난포스</option>
 			</select>
 		</td>
 	</tr>
 	<tr>
-		<td colspan="4" align="center"><input type="submit" value="�̺�Ʈ ���"/></td>
+		<td colspan="4" align="center"><input type="submit" value="이벤트 등록"/></td>
 	</tr>
 	</table>
 	

@@ -1,52 +1,52 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset="UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
-Æ÷ÀÎÆ® ÇöÈ²
+í¬ì¸íŠ¸ í˜„í™©
 <br/>
-ÇöÀç º¸À¯ Æ÷ÀÎÆ®: [DB:mpoint_historyÀÇ pointµ¥ÀÌÅÍ ÀÌ¿ë]P
+í˜„ìž¬ ë³´ìœ  í¬ì¸íŠ¸: [DB:mpoint_historyì˜ pointë°ì´í„° ì´ìš©]P
 <br/>
 <hr>
 
-** ¸â¹ö½Ê Ä«µå Á¤º¸<br/>
-Ä«µå ¸®½ºÆ®  &nbsp; &nbsp; &nbsp; &nbsp; <input type="button" value="Ä«µå µî·Ï ¹× ÇØÁö" onclick="location.href='memcardModify.jsp'">
+** ë©¤ë²„ì‹­ ì¹´ë“œ ì •ë³´<br/>
+ì¹´ë“œ ë¦¬ìŠ¤íŠ¸  &nbsp; &nbsp; &nbsp; &nbsp; <input type="button" value="ì¹´ë“œ ë“±ë¡ ë° í•´ì§€" onclick="location.href='memcardModify.jsp'">
 
 <table border="1">
 	<tr>
 		<td width="100">NO</td>
-		<td width="100">Ä«µå¹øÈ£</td>
-		<td width="100">µî·ÏÀÏ</td>
+		<td width="100">ì¹´ë“œë²ˆí˜¸</td>
+		<td width="100">ë“±ë¡ì¼</td>
 	</tr>
 	
 	<tr>
-		<td colspan="3"> [DB:Ä«µå ¸®½ºÆ® DB¿¡¼­ ²¨³»ÁÖ±â]</td>
+		<td colspan="3"> [DB:ì¹´ë“œ ë¦¬ìŠ¤íŠ¸ DBì—ì„œ êº¼ë‚´ì£¼ê¸°]</td>
 	</tr>
 </table>
 <br/>
  <hr>
- ** ¸â¹ö½± Æ÷ÀÎÆ® Àû¸³/»ç¿ë ³»¿ª
+ ** ë©¤ë²„ì‰½ í¬ì¸íŠ¸ ì ë¦½/ì‚¬ìš© ë‚´ì—­
  <select id="mempointType">
-		<option value="all">ÀüÃ¼</option>
-		<option value="saving">Àû¸³</option>
-		<option value="use">»ç¿ë</option>
-		<option value="event">ÀÌº¥Æ®</option>
+		<option value="all">ì „ì²´</option>
+		<option value="saving">ì ë¦½</option>
+		<option value="use">ì‚¬ìš©</option>
+		<option value="event">ì´ë²¤íŠ¸</option>
 </select>
 
 <table border="1">	 
 	 
 	 <tr>
-	 	<td>ÀÏÀÚ</td><td>ÀÌ¿ë³»¿ë</td><td>ÀÌ¿ë±Ý¾×</td><td>Àû¸³Æ÷ÀÎÆ®</td><td>»ç¿ëÆ÷ÀÎÆ®</td><td>±¸ºÐ</td>
+	 	<td>ì¼ìž</td><td>ì´ìš©ë‚´ìš©</td><td>ì´ìš©ê¸ˆì•¡</td><td>ì ë¦½í¬ì¸íŠ¸</td><td>ì‚¬ìš©í¬ì¸íŠ¸</td><td>êµ¬ë¶„</td>
 	 </tr>
 	 
 	 
 	 <tr>
-	 	[DB:mpointÅ×ÀÌºí¿¡¼­ °Ô½ÃÆÇÇüÅÂ·Î ÂÒ¸£¸¤ ºÒ·¯¿À±â!!&&select box¿¡ µû¶ó Å¸ÀÔº°·Î ºÒ·¯¿À±â ±â´Éµµ!]
+	 	[DB:mpointí…Œì´ë¸”ì—ì„œ ê²Œì‹œíŒí˜•íƒœë¡œ ì«˜ë¥´ë¥µ ë¶ˆëŸ¬ì˜¤ê¸°!!&&select boxì— ë”°ë¼ íƒ€ìž…ë³„ë¡œ ë¶ˆëŸ¬ì˜¤ê¸° ê¸°ëŠ¥ë„!]
 	 </tr>
  </table>
  

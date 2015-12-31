@@ -153,7 +153,11 @@ public class MemberBean {
 	
 	
 	@RequestMapping("/mypageForm")
-	public String mypageform(MemberInfoDTO dto, HttpServletRequest request){
+	public String mypageform(MemberInfoDTO dto, HttpServletRequest request, HttpSession session){
+		
+		String id = (String)session.getAttribute("memId");
+		id += "_hitory";
+		
 		
 		//회원아이디, 회원이름불러오기
 		request.setAttribute("nowYear", nowYear);
@@ -164,10 +168,12 @@ public class MemberBean {
 		String nowY=request.getParameter("nowYear"); 
 		
 		HashMap<String, String> map = new HashMap<String, String>();
+		
+		map.put("hitoryId", id);
 		map.put("memNum", memN);
 		map.put("nowYear", nowY);
 		
-		String grade = (String) sqlMapClient.queryForObject("mypage.mgradename", map);
+		String grade = (String) sqlMapClient.queryForObject("mypage.mgradename2", map);
 		System.out.println(grade+"등급등급");
 		request.setAttribute("grade", grade);
 		

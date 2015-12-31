@@ -1,4 +1,4 @@
-package event.rose.bean;
+package rose.DTO;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package event.rose.bean;
+package rose.bean;
 
 import java.io.Reader;
 
@@ -19,14 +19,11 @@ public class GreetBean {
 	@RequestMapping("/greet.do")
 	public String greet(){
 	return "/event/greet.jsp";
-}
-	public static Reader reader;
-	
-	public static SqlMapClient sqlMapper;
+	}
+
 	
 	public GreetBean() throws Exception{
-		reader = Resources.getResourceAsReader("sqlMapConfig.xml");
-		sqlMapper= SqlMapClientBuilder.buildSqlMapClient(reader);
+
 	
 	}
 	

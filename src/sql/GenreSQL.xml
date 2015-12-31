@@ -2,7 +2,7 @@
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 <sqlMap namespace="genre">
 	
-	<typeAlias alias="genre" type="rose.genre.bean.Genre"/>
+	<typeAlias alias="genre" type="rose.DTO.GenreTypeDTO"/>
 	<!-- Select All -->
 	<select id="getGenreList" resultClass="genre" >
 		select * from GENRE_TYPE

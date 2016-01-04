@@ -2,7 +2,7 @@
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <font size="5">쿠폰 테이블</font>
-<form>
+<form action="/RoseCinema/couponPro.do" method="post">
 	<table border="1">
 		<tr>
 			<td>쿠폰번호</td>

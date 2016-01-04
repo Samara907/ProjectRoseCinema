@@ -1,0 +1,56 @@
+package rose.event.dto;
+
+import java.util.Date;
+
+public class CouponDTO {
+	private int coupon_id;
+	private String coupon_name;
+	private Date start_date;
+	private Date end_date;
+	private int coupon_type;
+	private int coupon_count;
+	private int mgrade_id;
+	public int getCoupon_id() {
+		return coupon_id;
+	}
+	public void setCoupon_id(int coupon_id) {
+		this.coupon_id = coupon_id;
+	}
+	public String getCoupon_name() {
+		return coupon_name;
+	}
+	public void setCoupon_name(String coupon_name) {
+		this.coupon_name = coupon_name;
+	}
+	public Date getStart_date() {
+		return start_date;
+	}
+	public void setStart_date(Date start_date) {
+		this.start_date = start_date;
+	}
+	public Date getEnd_date() {
+		return end_date;
+	}
+	public void setEnd_date(Date end_date) {
+		this.end_date = end_date;
+	}
+	public int getCoupon_type() {
+		return coupon_type;
+	}
+	public void setCoupon_type(int coupon_type) {
+		this.coupon_type = coupon_type;
+	}
+	public int getCoupon_count() {
+		return coupon_count;
+	}
+	public void setCoupon_count(int coupon_count) {
+		this.coupon_count = coupon_count;
+	}
+	public int getMgrade_id() {
+		return mgrade_id;
+	}
+	public void setMgrade_id(int mgrade_id) {
+		this.mgrade_id = mgrade_id;
+	}
+	
+}

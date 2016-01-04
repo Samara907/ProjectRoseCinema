@@ -2,6 +2,7 @@
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <font size="5">발행쿠폰 테이블</font>
+<form action="/RoseCinema/couponNumPro.do" method="post">
 <table border="1">
 	<tr>
 		<td>발행번호</td>
@@ -19,4 +20,8 @@
 		<td>사용자</td>
 		<td><input type="text" name="id"></td>
 	</tr>
-</table>	
+	<tr>
+		<td align="center"><input type="submit" value="등록"/></td>
+	</tr>
+</table>
+</form>	

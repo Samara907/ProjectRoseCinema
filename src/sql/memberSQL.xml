@@ -9,14 +9,33 @@
    </insert>  <!-- 회원가입시 member_info table에 넣어주는 쿼리문 -->
    
    <statement id="hitory" parameterClass="String">
-
-	create table $hitoryId$ (
-		num number primary key,
-		mgrade_id number default 1,
-		year varchar2(100),
-		buy_count number default 0 
-	)
+		create table $hitoryId$ (
+			num number primary key,
+			mgrade_id number default 1,
+			year varchar2(100),
+			buy_count number default 0 
+		)
 	</statement>
+	
+	<statement id="mpoint" parameterClass="String">
+		create table $mpointId$ (
+			num number primary key,
+			point number default 0,
+			change_point number,
+			change_type number,
+			change_time date,
+			pay_content varchar2(100),
+			pay_sum number
+		)
+	</statement>
+	
+	
+	<insert id="mgradeDefault" parameterClass="java.util.HashMap">
+      insert into $hitoryId$ values(1,1,#nowYear#,0)
+   </insert> 
+	
+	
+	
    
    <select id="userCheck" resultClass="int" parameterClass="dto">
       select count(*) from MEMBER_INFO where id =#id# and pw=#pw#

@@ -49,7 +49,20 @@ public class MemberBean {
 		String hitoryId = dto.getId()+"_hitory";
 		sqlMapClient.insert("member.hitory", hitoryId);
 		
+		String mpointId = dto.getId() +"_mpoint";
+		sqlMapClient.insert("member.mpoint", mpointId);		
+		
 		request.setAttribute("name", dto.getName()); 
+		
+		String nowY = Integer.toString(nowYear);
+				
+		HashMap<String, String> map = new HashMap<String, String>();
+		
+		map.put("hitoryId", hitoryId);
+		//map.put("memNum", memN);
+		map.put("nowYear", nowY);
+		
+		sqlMapClient.insert("member.mgradeDefault", map);		
 
 		return "/member/inputPro.jsp";
 	}
@@ -170,10 +183,10 @@ public class MemberBean {
 		HashMap<String, String> map = new HashMap<String, String>();
 		
 		map.put("hitoryId", id);
-		map.put("memNum", memN);
+		//map.put("memNum", memN);
 		map.put("nowYear", nowY);
 		
-		String grade = (String) sqlMapClient.queryForObject("mypage.mgradename2", map);
+		String grade = (String)sqlMapClient.queryForObject("mypage.mgradename", map);
 		System.out.println(grade+"등급등급");
 		request.setAttribute("grade", grade);
 		
@@ -187,8 +200,12 @@ public class MemberBean {
 		String id = (String)session.getAttribute("memId");
 		id += "_hitory";
 		List list = sqlMapClient.queryForList("mypage.mgradehistory", id);
+		
+		//System.out.println(list.mgrade_id);
+		
 		request.setAttribute("history", list);
 		return "/mypage/gradehistoryForm.jsp";
+		
 	}
 	
 	

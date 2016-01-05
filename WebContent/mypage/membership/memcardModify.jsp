@@ -9,24 +9,30 @@
 <body>
 
 * 멤버쉽 카드 등록하기
-<table border="1">
-	<tr>
-		<td>카드번호</td>
-		<td><input type"text" size="16"></td>
-	</tr>
-	<tr>
-		<td>카드이름 설정</td>
-		<td><input type"text" size="16"></td>
-	</tr>
-	
-	
-	<tr>
-		<td colspan="2">
-		<input type="button" value="취소">
-		<input type="button" value="등록">
-		</td>
-	</tr>
-</table>
+
+
+<form method="post" action="inputPro" name="mcardmodify" onSubmit="return checkIt()">
+	<table border="1">
+		<tr>
+			<td>카드번호</td>
+			<td><input type"text" name="mcard_id" size="16"></td>
+		</tr>
+		
+		<tr>
+			<td>카드이름 설정</td>
+			<td><input type"text" name="mcard_name" size="16"></td>
+		</tr>
+		
+		
+		<tr>
+			<td colspan="2">
+			<input type="button" value="취소">
+			<input type="submit" value="등록">
+			</td>
+		</tr>
+	</table>
+
+</form>
 
 <br/>
 

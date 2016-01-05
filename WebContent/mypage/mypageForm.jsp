@@ -31,7 +31,7 @@
 	
 	*내 멤버쉽 포인트: [DB:mpoint_history의 point데이터 이용]점<br/>
 	
-	<form method="post" action="mypage/membership/meminfoForm.jsp" name="meminfo">
+	<form method="post" action="meminfoForm" name="meminfo">
 		<input type=hidden name="memNum" value="${memNum}" />
 		<input type="submit" value="내 멤버쉽 정보 보기" > <!-- onclick="location.href='mypage/membership/meminfoForm.jsp'" -->
 		 -->여기 클릭하면 이 안에 멤버쉽 카드 정보, 멤버쉽 카드 등록/해지 기능, 멤버쉽 포인트 정보, 멤버쉽 사용 내역 등 나온다.

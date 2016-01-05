@@ -12,20 +12,27 @@
    </select>  <!-- 로그인시 DB체크 쿼리문 -->
 
 
+	<!-- 
     <select id="mgradename" resultClass="String" parameterClass="java.util.HashMap">
 	    select name from mgrade_type where mgrade_id = (
 			select mgrade_id from mgrade_history where member_id=#memNum# and year=#nowYear#)	
     </select>
+    -->
     
-    <select id="mgradename2" resultClass="String" parameterClass="java.util.HashMap">
+    <select id="mgradename" resultClass="String" parameterClass="java.util.HashMap">
 	    select name from mgrade_type where mgrade_id = (
-			select mgrade_id from $hitoryId$ where year=#nowYear#)	
+			select mgrade_id from $hitoryId$ where year=#nowYear#)
     </select>
     
     
     <select id="mgradehistory" resultClass="mgradeDTO" parameterClass="String">
     	select * from $hitoryId$
     </select>  <!-- 등급이름들 뽑아내는 쿼리 -->
+    
+    
+    <select id="mpointhistory" resultClass="pointDTO" parameterClass="String">
+    	select * from $mpointId$
+    </select>
     
     
     <!-- 

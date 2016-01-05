@@ -29,8 +29,19 @@ int nowYear=cal.get(Calendar.YEAR);
   	
   	<tr>  	
   		<td>년도</td>   
-  		<c:forEach var="dto" items="${history}">
-  			<td> ${dto.year} </td>
+  		<c:forEach var="dto" items="${history}">  	
+  			
+			<c:choose>
+				<c:when test="${dto == null}">
+					<td> 신규회원입니다. </td>
+				</c:when>
+				
+				<c:otherwise>
+					<td> ${dto.year} </td>
+				</c:otherwise>
+			 </c:choose> 			
+			 
+  			<!--   <td> ${dto.year} </td>  -->
   		</c:forEach>		
   	</tr>
   	
@@ -38,7 +49,26 @@ int nowYear=cal.get(Calendar.YEAR);
   	<tr> 		 	
   		<td>등급</td>
   		<c:forEach var="dto" items="${history}">
-  			<td> ${dto.mgrade_id} </td>
+  			<c:if test="${dto == null}">
+  				<td> 신규회원입니다. </td>
+  			</c:if>	
+  		
+  			<c:if test="${dto.mgrade_id == 1}">
+  				<td> Silver </td>
+  			</c:if>	
+  			
+  			<c:if test="${dto.mgrade_id == 2}">
+  				<td> Gold </td>
+  			</c:if>	
+  			
+  			<c:if test="${dto.mgrade_id == 3}">
+  				<td> WhiteGold </td>
+  			</c:if>
+  			
+  			<c:if test="${dto.mgrade_id == 4}">
+  				<td> RoseGold </td>
+  			</c:if>
+  			
   		</c:forEach>
   	</tr>
   	
@@ -48,7 +78,7 @@ int nowYear=cal.get(Calendar.YEAR);
   	
   
   </table>
-  
+
   
   
   <a href="memgradeinfoForm.jsp">멤버쉽 등급 기준표</a>

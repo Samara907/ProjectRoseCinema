@@ -2,6 +2,9 @@ package rose.bean;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
@@ -18,16 +21,13 @@ public class PointBean {
 	private SqlMapClientTemplate sqlMapClient;
 	
 	@RequestMapping("/meminfoForm")
-	public ModelAndView meminfo(MpointHistoryDTO dto) throws Exception{
+	public String meminfo(HttpSession session , HttpServletRequest request) throws Exception{
+		String id = (String)session.getAttribute("memId");
+		id += "_mpoint";
+		List list = sqlMapClient.queryForList("mypage.mpointhistory", id);
+		request.setAttribute("mpoint", list);
 		
-		List alist = sqlMapClient.queryForList("mypage.mpointhistory", dto);
-		
-		ModelAndView mv = new ModelAndView ();
-		mv.addObject("alist", alist);
-		
-		mv.setViewName("/mypage/membership/meminfoForm.jsp");
-		
-		return mv;
+		return "/mypage/membership/meminfoForm.jsp";
 	}
 
 }

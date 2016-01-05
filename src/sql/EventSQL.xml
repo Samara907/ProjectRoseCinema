@@ -5,6 +5,10 @@
 	<typeAlias alias="typeDTO" type="rose.event.dto.CouponTypeDTO"/>
 	<typeAlias alias="numDTO" type="rose.event.dto.CouponNumDTO"/>
 	<typeAlias alias="couponDTO" type="rose.event.dto.CouponDTO"/>
+	<typeAlias alias="eventTypeDTO" type="rose.event.dto.EventTypeDTO"/>
+	<typeAlias alias="eventDTO" type="rose.event.dto.EventDTO"/>
+	
+	
 	
 	<insert id="typeInsert" parameterClass="typeDTO">
 		insert into coupon_type values(coupon_type_seq.nextval,#coupon_name#)
@@ -16,6 +20,14 @@
 	
 	<insert id="numInsert" parameterClass="numDTO">
 		insert into coupon_num values(coupon_num_seq.nextval,#coupon_num#,to_date(#used_date#,'yyyy-mm-dd'), #id#)
+	</insert>
+	
+	<insert id="eventTypeInsert" parameterClass="eventTypeDTO">
+		insert into event_type values(#eventtype_id#,#eventtype_name#)
+	</insert>
+	
+	<insert id="eventInsert" parameterClass="eventDTO">
+		insert into event values(event_seq.nextval,#eventtype_id#,to_date(#estart_date#,'yyyy-mm-dd'),to_date(#eend_date#,'yyyy-mm-dd'),#event_name#,#event_image#,#timetable_id#,#coupon_id#)
 	</insert>
 	
 	<select id="typeList" resultClass="typeDTO">

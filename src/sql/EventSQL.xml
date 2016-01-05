@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="event">
+	
+	<typeAlias alias="typeDTO" type="rose.event.dto.CouponTypeDTO"/>
+	<typeAlias alias="numDTO" type="rose.event.dto.CouponNumDTO"/>
+	<typeAlias alias="couponDTO" type="rose.event.dto.CouponDTO"/>
+	
+	<insert id="typeInsert" parameterClass="typeDTO">
+		insert into coupon_type values(coupon_type_seq.nextval,#coupon_name#)
+	</insert>
+	
+	<insert id="couponInsert" parameterClass="couponDTO">
+		insert into coupon values(coupon_seq.nextval, #coupon_name#, to_date(#start_date#,'yyyy-mm-dd'), to_date(#end_date#,'yyyy-mm-dd'), #coupon_type#, #coupon_count#, #mgrade_id#)
+	</insert>
+	
+	<insert id="numInsert" parameterClass="numDTO">
+		insert into coupon_num values(coupon_num_seq.nextval,#coupon_num#,to_date(#used_date#,'yyyy-mm-dd'), #id#)
+	</insert>
+	
+	<select id="typeList" resultClass="typeDTO">
+		select * from coupon_type
+	</select>
+	
+	<select id="couponNumList" resultClass="numDTO">
+		select * from coupon_num
+	</select>
+	
+	
+</sqlMap>

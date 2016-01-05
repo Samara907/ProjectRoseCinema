@@ -5,8 +5,8 @@ import java.util.Date;
 public class CouponDTO {
 	private int coupon_id;
 	private String coupon_name;
-	private Date start_date;
-	private Date end_date;
+	private String start_date;
+	private String end_date;
 	private int coupon_type;
 	private int coupon_count;
 	private int mgrade_id;
@@ -22,16 +22,17 @@ public class CouponDTO {
 	public void setCoupon_name(String coupon_name) {
 		this.coupon_name = coupon_name;
 	}
-	public Date getStart_date() {
+	
+	public String getStart_date() {
 		return start_date;
 	}
-	public void setStart_date(Date start_date) {
+	public void setStart_date(String start_date) {
 		this.start_date = start_date;
 	}
-	public Date getEnd_date() {
+	public String getEnd_date() {
 		return end_date;
 	}
-	public void setEnd_date(Date end_date) {
+	public void setEnd_date(String end_date) {
 		this.end_date = end_date;
 	}
 	public int getCoupon_type() {

@@ -1,5 +1,9 @@
 package rose.event.bean;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
@@ -14,7 +18,10 @@ public class CouponBean {
 	private SqlMapClientTemplate sqlMapClient;
 	
 	@RequestMapping("/coupon.do")
-	public String coupon()throws Exception{
+	public String coupon(HttpServletRequest request)throws Exception{
+		
+		List list = sqlMapClient.queryForList("event.typeList", null);
+		request.setAttribute("typeList", list);
 		return "/event/coupon.jsp";
 	}
 	

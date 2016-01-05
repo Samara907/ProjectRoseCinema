@@ -11,14 +11,20 @@
 	</insert>
 	
 	<insert id="couponInsert" parameterClass="couponDTO">
-		insert into coupon values(coupon_seq.nextval, #coupon_name#, #start_date#, #end_date#, #coupon_type#, #coupon_count#, #mgrade_id#)
+		insert into coupon values(coupon_seq.nextval, #coupon_name#, to_date(#start_date#,'yyyy-mm-dd'), to_date(#end_date#,'yyyy-mm-dd'), #coupon_type#, #coupon_count#, #mgrade_id#)
 	</insert>
 	
 	<insert id="numInsert" parameterClass="numDTO">
-		insert into coupon_num values(coupon_num_seq.nextval,#coupon_num#,#used_date#, #id#)
+		insert into coupon_num values(coupon_num_seq.nextval,#coupon_num#,to_date(#used_date#,'yyyy-mm-dd'), #id#)
 	</insert>
 	
+	<select id="typeList" resultClass="typeDTO">
+		select * from coupon_type
+	</select>
 	
+	<select id="couponNumList" resultClass="numDTO">
+		select * from coupon_num
+	</select>
 	
 	
 </sqlMap>

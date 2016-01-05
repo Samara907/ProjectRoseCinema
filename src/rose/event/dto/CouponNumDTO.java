@@ -5,7 +5,7 @@ import java.util.Date;
 public class CouponNumDTO {
 	private int coupon_num;
 	private int coupon_id;
-	private Date used_date;
+	private String used_date;
 	private String id;
 	public int getCoupon_num() {
 		return coupon_num;
@@ -19,10 +19,11 @@ public class CouponNumDTO {
 	public void setCoupon_id(int coupon_id) {
 		this.coupon_id = coupon_id;
 	}
-	public Date getUsed_date() {
+
+	public String getUsed_date() {
 		return used_date;
 	}
-	public void setUsed_date(Date used_date) {
+	public void setUsed_date(String used_date) {
 		this.used_date = used_date;
 	}
 	public String getId() {

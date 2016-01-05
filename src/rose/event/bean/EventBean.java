@@ -14,7 +14,7 @@ public class EventBean  {
 	private SqlMapClientTemplate sqlMapClient;
 	
 	@RequestMapping("/event")
-	public String event()throws Exception{
+	public String event() throws Exception{
 		return "/event/event.jsp";
 	}
 	

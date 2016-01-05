@@ -38,5 +38,14 @@
 		select * from coupon_num
 	</select>
 	
+	<select id="eventTypeList" resultClass="eventTypeDTO">
+		select * from event_type
+	</select>
+	
+	<select id="eventList" resultClass="eventDTO">
+		select * from event
+	</select>
+	
+	
 	
 </sqlMap>

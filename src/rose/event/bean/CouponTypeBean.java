@@ -13,12 +13,12 @@ public class CouponTypeBean {
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
 	
-	@RequestMapping("/couponType.do")
+	@RequestMapping("/couponType")
 	public String typeForm()throws Exception{
 		return "/event/couponType.jsp";
 	}
 	
-	@RequestMapping("/couponTypePro.do")
+	@RequestMapping("/couponTypePro")
 	public String typeFormPro(CouponTypeDTO dto)throws Exception{
 		
 		sqlMapClient.insert("event.typeInsert", dto);

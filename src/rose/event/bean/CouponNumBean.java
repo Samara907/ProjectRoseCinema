@@ -18,14 +18,14 @@ public class CouponNumBean {
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
 	
-	@RequestMapping("/couponNum.do")
+	@RequestMapping("/couponNum")
 	public String couponNum(HttpServletRequest request)throws Exception{
 		List couponlist = sqlMapClient.queryForList("event.couponNumList",null);
 		request.setAttribute("couponNumList", couponlist);
 		return "/event/couponNum.jsp";
 	}
 	
-	@RequestMapping("/couponNumPro.do")
+	@RequestMapping("/couponNumPro")
 	public String couponNumPro(CouponNumDTO dto)throws Exception{
 		
 		sqlMapClient.insert("event.numInsert", dto);

@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <font size="5">발행쿠폰 테이블</font>
-<form action="/RoseCinema/couponNumPro.do" method="post">
+<form action="/RoseCinema/couponNumPro" method="post">
 <table border="1">
 	<tr>
 		<td>쿠폰번호</td>

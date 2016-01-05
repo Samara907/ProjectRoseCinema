@@ -17,7 +17,7 @@ public class CouponBean {
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
 	
-	@RequestMapping("/coupon.do")
+	@RequestMapping("/coupon")
 	public String coupon(HttpServletRequest request)throws Exception{
 		
 		List list = sqlMapClient.queryForList("event.typeList", null);
@@ -25,7 +25,7 @@ public class CouponBean {
 		return "/event/coupon.jsp";
 	}
 	
-	@RequestMapping("/couponPro.do")
+	@RequestMapping("/couponPro")
 	public String couponPro(CouponDTO dto)throws Exception{
 		
 		sqlMapClient.insert("event.couponInsert", dto);

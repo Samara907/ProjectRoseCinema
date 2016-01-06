@@ -30,8 +30,15 @@
 			<td><input type="number" name="coupon_count"></td>
 			<td>등급</td>
 			<td><input type="text" name="mgrade_id"></td>
+		</tr>
+		<tr>
+			<td align="center">쿠폰 내용</td>
+			
+			<td align="center"><textarea name="coupon_content"></textarea></td>
+		</tr>
 		<tr>
 			<td align="center"><input type="submit" value="쿠폰 발급"/></td>
+			
 		</tr>
 	</table>
 </form>

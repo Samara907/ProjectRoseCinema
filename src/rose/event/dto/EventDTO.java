@@ -11,7 +11,15 @@ public class EventDTO {
 	private String event_image;
 	private int timetable_id;
 	private int coupon_id;
+	private String event_poster;
 	
+	
+	public String getEvent_poster() {
+		return event_poster;
+	}
+	public void setEvent_poster(String event_poster) {
+		this.event_poster = event_poster;
+	}
 	public int getEvent_id() {
 		return event_id;
 	}

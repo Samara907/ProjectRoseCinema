@@ -14,6 +14,8 @@
 			data:""
 		})
 	}
+	
+	function getSeatList
 </script>
 </head>
 <body>

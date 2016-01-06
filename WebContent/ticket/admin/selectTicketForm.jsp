@@ -62,7 +62,7 @@ function getAllTicketList() {
 </head>
 <body>
 	<div>
-		<button onclick="window.open('/RoseCinema/Insert')"></button>
+		<button onclick="window.open('/RoseCinema/insertTicketForm', 'InsertTicketForm', 'width=300,height=300,location=no,status=no,scrollbars=yes')">InsertTicket</button>
 	</div>
 	<div>
 		<table id="ticketList" border="3">

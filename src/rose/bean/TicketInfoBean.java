@@ -52,11 +52,11 @@ public class TicketInfoBean {
 	
 	@RequestMapping("/insertTicketForm")
 	public String insertTicketForm() {
-		return "/RoseCinema/ticket/admin/insertTicketForm.jsp";
+		return "/ticket/admin/insertTicketForm.jsp";
 	}
 	
-	@RequestMapping("updateTicketForm")
+	@RequestMapping("/updateTicketForm")
 	public String updateTicketForm() {
-		return "/RoseCinema/ticket/admin/updateTicketForm.jsp";
+		return "/ticket/admin/updateTicketForm.jsp";
 	}
 }

@@ -10,4 +10,5 @@
 	<sqlMap resource="/sql/TheaterSQL.xml"/>
 	<sqlMap resource="/sql/AreaSQL.xml"/>
 	<sqlMap resource="/sql/FaqSQL.xml"/>
+	<sqlMap resource="/sql/SeatSQL.xml"/>
 </sqlMapConfig>

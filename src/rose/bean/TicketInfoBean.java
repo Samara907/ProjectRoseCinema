@@ -4,25 +4,22 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import rose.dto.TicketDTO;
 
+@Controller
 public class TicketInfoBean {
 	
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
 	
-	@RequestMapping("/getAllTickList")
+	@RequestMapping("/getAllTicketList")
 	@ResponseBody
 	public List<TicketDTO> getAllTicketList() {
-		System.out.print("Sdfdsf");
-		System.out.print("Sdfdsf");
-		System.out.print("Sdfdsf");
-		
 		List<TicketDTO> ticket_list = (List<TicketDTO>)sqlMapClient.queryForList("ticket.getAllTicketList", null);
-		System.out.print("Sdfdsf");
 		return ticket_list;
 	}
 	

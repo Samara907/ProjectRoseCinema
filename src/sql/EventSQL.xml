@@ -15,7 +15,7 @@
 	</insert>
 	
 	<insert id="couponInsert" parameterClass="couponDTO">
-		insert into coupon values(coupon_seq.nextval, #coupon_name#, to_date(#start_date#,'yyyy-mm-dd'), to_date(#end_date#,'yyyy-mm-dd'), #coupon_type#, #coupon_count#, #mgrade_id#)
+		insert into coupon values(coupon_seq.nextval, #coupon_name#, to_date(#start_date#,'yyyy-mm-dd'), to_date(#end_date#,'yyyy-mm-dd'), #coupon_type#, #coupon_count#, #mgrade_id#,#coupon_content#)
 	</insert>
 	
 	<insert id="numInsert" parameterClass="numDTO">
@@ -27,7 +27,7 @@
 	</insert>
 	
 	<insert id="eventInsert" parameterClass="eventDTO">
-		insert into event values(event_seq.nextval,#eventtype_id#,to_date(#estart_date#,'yyyy-mm-dd'),to_date(#eend_date#,'yyyy-mm-dd'),#event_name#,#event_image#,#timetable_id#,#coupon_id#)
+		insert into event values(event_seq.nextval,#eventtype_id#,to_date(#estart_date#,'yyyy-mm-dd'),to_date(#eend_date#,'yyyy-mm-dd'),#event_name#,#event_image#,#timetable_id#,#coupon_id#,#event_poster#)
 	</insert>
 	
 	<select id="typeList" resultClass="typeDTO">
@@ -37,6 +37,10 @@
 	<select id="couponNumList" resultClass="numDTO">
 		select * from coupon_num
 	</select>
+	<select id="couponlist" resultClass="couponDTO">
+		select cou.*, num.used_date from coupon cou, coupon_num num where cou.coupon_id=num.coupon_id
+	</select>
+	
 	
 	<select id="eventTypeList" resultClass="eventTypeDTO">
 		select * from event_type
@@ -46,6 +50,12 @@
 		select * from event
 	</select>
 	
-	
-	
+	<select id="eventContent" resultClass="eventDTO" parameterClass="String">
+		select * from event where event_id = #event_id#
+	</select>
+
 </sqlMap>
+
+
+
+

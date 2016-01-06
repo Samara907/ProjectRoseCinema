@@ -10,6 +10,9 @@ public class CouponDTO {
 	private int coupon_type;
 	private int coupon_count;
 	private int mgrade_id;
+	private String coupon_content;
+	private String used_date;
+	
 	public int getCoupon_id() {
 		return coupon_id;
 	}
@@ -52,6 +55,18 @@ public class CouponDTO {
 	}
 	public void setMgrade_id(int mgrade_id) {
 		this.mgrade_id = mgrade_id;
+	}
+	public String getCoupon_content() {
+		return coupon_content;
+	}
+	public void setCoupon_content(String coupon_content) {
+		this.coupon_content = coupon_content;
+	}
+	public String getUsed_date() {
+		return used_date;
+	}
+	public void setUsed_date(String used_date) {
+		this.used_date = used_date;
 	}
 	
 }

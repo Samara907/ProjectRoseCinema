@@ -20,7 +20,7 @@ public class CouponBean {
 	@RequestMapping("/coupon")
 	public String coupon(HttpServletRequest request)throws Exception{
 		
-		List list = sqlMapClient.queryForList("event.typeList", null);
+		List list = sqlMapClient.queryForList("event.typeList",null);
 		request.setAttribute("typeList", list);
 		return "/event/coupon.jsp";
 	}
@@ -31,5 +31,12 @@ public class CouponBean {
 		sqlMapClient.insert("event.couponInsert", dto);
 		
 		return "/event/couponPro.jsp";
+	}
+	
+	@RequestMapping("/couponList")
+	public String event(HttpServletRequest request) throws Exception{
+		List coulist = sqlMapClient.queryForList("event.couponlist",null);
+		request.setAttribute("couponlist", coulist);
+		return "/event/couponList.jsp";
 	}
 }

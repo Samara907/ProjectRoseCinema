@@ -6,11 +6,11 @@ public class TicketDTO {
 
 	private int ticket_id;
 	private String no;
-	private String seat_id;
-	private String screen_id;
-	private String member_id;
-	private String mcard_id;
-	private String coupon_id;
+	private int seat_id;
+	private int screen_id;
+	private int member_id;
+	private int mcard_id;
+	private int coupon_id;
 	private String movie;
 	private String theater;
 	private String screen;
@@ -28,7 +28,7 @@ public class TicketDTO {
 	private String buySum;
 	private String buyType;
 	private String phone;
-	private int isCancel;
+	private String isCancel;
 	private Date cancelDate;
 	
 	public int getTicket_id() {
@@ -43,34 +43,34 @@ public class TicketDTO {
 	public void setNo(String no) {
 		this.no = no;
 	}
-	public String getSeat_id() {
+	public int getSeat_id() {
 		return seat_id;
 	}
-	public void setSeat_id(String seat_id) {
+	public void setSeat_id(int seat_id) {
 		this.seat_id = seat_id;
 	}
-	public String getScreen_id() {
+	public int getScreen_id() {
 		return screen_id;
 	}
-	public void setScreen_id(String screen_id) {
+	public void setScreen_id(int screen_id) {
 		this.screen_id = screen_id;
 	}
-	public String getMember_id() {
+	public int getMember_id() {
 		return member_id;
 	}
-	public void setMember_id(String member_id) {
+	public void setMember_id(int member_id) {
 		this.member_id = member_id;
 	}
-	public String getMcard_id() {
+	public int getMcard_id() {
 		return mcard_id;
 	}
-	public void setMcard_id(String mcard_id) {
+	public void setMcard_id(int mcard_id) {
 		this.mcard_id = mcard_id;
 	}
-	public String getCoupon_id() {
+	public int getCoupon_id() {
 		return coupon_id;
 	}
-	public void setCoupon_id(String coupon_id) {
+	public void setCoupon_id(int coupon_id) {
 		this.coupon_id = coupon_id;
 	}
 	public String getMovie() {
@@ -175,10 +175,10 @@ public class TicketDTO {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public int getIsCancel() {
+	public String getIsCancel() {
 		return isCancel;
 	}
-	public void setIsCancel(int isCancel) {
+	public void setIsCancel(String isCancel) {
 		this.isCancel = isCancel;
 	}
 	public Date getCancelDate() {

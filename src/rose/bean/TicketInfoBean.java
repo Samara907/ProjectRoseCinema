@@ -17,11 +17,16 @@ public class TicketInfoBean {
 	@RequestMapping("/getAllTickList")
 	@ResponseBody
 	public List<TicketDTO> getAllTicketList() {
+		System.out.print("Sdfdsf");
+		System.out.print("Sdfdsf");
+		System.out.print("Sdfdsf");
+		
 		List<TicketDTO> ticket_list = (List<TicketDTO>)sqlMapClient.queryForList("ticket.getAllTicketList", null);
+		System.out.print("Sdfdsf");
 		return ticket_list;
 	}
 	
-	@RequestMapping("/getTicketList")
+/*	@RequestMapping("/getTicketList")
 	@ResponseBody
 	public List<TicketDTO> getTicketList(int member_id) {
 		List<TicketDTO> ticket_list = (List<TicketDTO>)sqlMapClient.queryForList("ticket.getTicketList", member_id);
@@ -46,5 +51,5 @@ public class TicketInfoBean {
 	@ResponseBody
 	public void buyTicket(TicketDTO ticket) {
 		sqlMapClient.queryForObject("ticket.buyTicket", ticket);
-	}
+	}*/
 }

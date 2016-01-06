@@ -49,4 +49,14 @@ public class TicketInfoBean {
 	public void buyTicket(TicketDTO ticket) {
 		sqlMapClient.queryForObject("ticket.buyTicket", ticket);
 	}*/
+	
+	@RequestMapping("/insertTicketForm")
+	public String insertTicketForm() {
+		return "/RoseCinema/ticket/admin/insertTicketForm.jsp";
+	}
+	
+	@RequestMapping("updateTicketForm")
+	public String updateTicketForm() {
+		return "/RoseCinema/ticket/admin/updateTicketForm.jsp";
+	}
 }

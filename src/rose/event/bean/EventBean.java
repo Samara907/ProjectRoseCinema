@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import rose.event.dto.EventDTO;
 
 @Controller
-public class EventBean  {
+public class EventBean{
 	
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;

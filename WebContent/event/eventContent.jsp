@@ -15,7 +15,7 @@
 	</tr>
 	<tr>
 		<td>
-			<img src="/RoseCinema/event/img/${dto.event_poster}" />
+			<img src="RoseCinema/event/img/${dto.event_poster}" />
 		</td>
 	</tr>
 </table>

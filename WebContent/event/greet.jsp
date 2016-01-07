@@ -10,23 +10,19 @@
 <h1>무대 인사</h1>
 <table>
 <tr>
-	<th>날짜</th>
+	<th>번호</th>
 	<th>영화</th>
-	<th>상영시간</th>
 	<th>극장아이디</th>
-	<th>상영관아이디</th>
-	<th>출연진</th>
+	<th>조회수</th>
 </tr>
 <tr>
 	<td></td>
 	<td></td>
 	<td></td>
 	<td></td>
-	<td></td>
-	<td></td>
 </tr>
 </table>
-<a href="greetwrite.jsp">글쓰기</a>
+<a href="greet.jsp">글쓰기</a>
 
 </body>
 </html>

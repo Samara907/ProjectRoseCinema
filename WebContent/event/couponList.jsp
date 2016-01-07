@@ -2,7 +2,7 @@
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<table>
+<table border="1">
 	<tr>
 		<td>쿠폰이름</td>
 		<td>쿠폰번호</td>
@@ -14,9 +14,6 @@
 			<td>${couponDTO.coupon_id }</td>
 			<td>${couponDTO.end_date }</td>
 			<td>${couponDTO.used_date }</td>
-		
 		</tr>
 	</c:forEach>
-
-
 </table>

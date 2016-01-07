@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 <sqlMap namespace="ticket">
-	<typeAlias alias="Ticket" type="rose.dto.TicketDTO"/>
+	<typeAlias alias="ticketDTO" type="rose.dto.TicketDTO"/>
 	
-	<select id="getAllTicketList" resultClass="Ticket">
+	<select id="selectAllTicketList" resultClass="ticketDTO">
 		SELECT * FROM TICKET_INFO
 	</select>
 	
-	<select id="getTicketList" resultClass="Ticket" parameterClass="int">
-		SELECT * FROM TICKET_INFO WHERE MEMBER_ID = #member_id#
+	<select id="selectTicketList" resultClass="ticketDTO" parameterClass="int">
+		SELECT * FROM TICKET_INFO WHERE MEMBERID = #memberID#
 	</select>
 	
-	<select id="getTicketByNo" resultClass="Ticket" parameterClass="String">
+	<select id="selectTicketByNo" resultClass="ticketDTO" parameterClass="String">
 		SELECT * FROM TICKET_INFO WHERE NO = #no#
 	</select>
 	
-	<select id="getTicketById" resultClass="Ticket" parameterClass="int">
-		SELECT * FROM TICKET_INFO WHERE TICKET_ID = #ticket_id#
+	<select id="selectTicketById" resultClass="ticketDTO" parameterClass="int">
+		SELECT * FROM TICKET_INFO WHERE TICKETID = #ticketID#
 	</select>
 	
-	<update id="cancelTicket" parameterClass="String">	
+	<update id="updateIsCancel" parameterClass="String">	
 		UPDATE TICKET_INFO SET ISCANCEL = 'YES', CANCELDATE = SYSDATE WHERE NO = #no#  
 	</update>
 	
-	<insert id="buyTicket" parameterClass="Ticket"> 
-		INSERT INTO TICKET_INFO VALUES(TICKET_ID_SEQ.NEXTVAL,#no#,#seat_id#,#screen_id#,#member_id#,#mcard_id#,#coupon_id#,#movie#,#theater#,#screen#,#ticketDate#,#count#,#seat1#,#seat2#,#seat3#,#seat4#,#seat5#,#seat6#,#seat7#,#seat8#,#buyDate#,#buySum#,#buyType#,#phone#,#isCancel#,#cancelDate#)
+	<insert id="insertTicket" parameterClass="ticketDTO"> 
+		INSERT INTO TICKET_INFO VALUES(TICKET_ID_SEQ.NEXTVAL,#no#,#seatID#,#screenID#,#memberID#,#mcardID#,#couponID#,#movie#,#theater#,#screen#,#ticketDate#,#count#,#seat1#,#seat2#,#seat3#,#seat4#,#seat5#,#seat6#,#seat7#,#seat8#,#buyDate#,#buySum#,#buyType#,#phone#,#isCancel#,#cancelDate#)
 	</insert>
 	
 </sqlMap>

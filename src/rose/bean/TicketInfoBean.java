@@ -16,10 +16,10 @@ public class TicketInfoBean {
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
 	
-	@RequestMapping("/getAllTicketList")
+	@RequestMapping("/selectAllTicketList")
 	@ResponseBody
-	public List<TicketDTO> getAllTicketList() {
-		List<TicketDTO> ticket_list = (List<TicketDTO>)sqlMapClient.queryForList("ticket.getAllTicketList", null);
+	public List<TicketDTO> selectAllTicketList() {
+		List<TicketDTO> ticket_list = (List<TicketDTO>)sqlMapClient.queryForList("ticket.selectAllTicketList", null);
 		return ticket_list;
 	}
 	
@@ -57,6 +57,6 @@ public class TicketInfoBean {
 	
 	@RequestMapping("/updateTicketForm")
 	public String updateTicketForm() {
-		return "/ticket/admin/updateTicketForm.jsp";
+		return "/ticket/admin/ticketForm.jsp";
 	}
 }

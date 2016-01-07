@@ -16,7 +16,8 @@
 >		
 
 		<context:component-scan base-package="rose.bean"/>
-		<context:component-scan base-package="test.rose.bean"/>
+
+		
 		
 	
 		<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
@@ -26,7 +27,7 @@
 			<property name="sqlMapClient" ref="sqlMapClient"/>
 			<property name="dataSource" ref="dataSource"/>
 		</bean>
-		<bean		id="dataSource"
+		<bean		id="dataSource" 
 					class="org.apache.tomcat.dbcp.dbcp.BasicDataSource"
 					destroy-method="close"
 					p:driverClassName="oracle.jdbc.driver.OracleDriver"
@@ -34,8 +35,8 @@
 					p:username="final01"
 					p:password="final01">
 		</bean>
-
-
+		
+		
 		<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 			<property name="maxUploadSize" value="-1"></property>
 			<property name="defaultEncoding" value="utf-8"></property>

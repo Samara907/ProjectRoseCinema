@@ -4,13 +4,13 @@ import java.util.Date;
 
 public class TicketDTO {
 
-	private int ticket_id;
+	private int ticketID;
 	private String no;
-	private int seat_id;
-	private int screen_id;
-	private int member_id;
-	private int mcard_id;
-	private int coupon_id;
+	private int seatID;
+	private int screenID;
+	private int memberID;
+	private int mcardID;
+	private int couponID;
 	private String movie;
 	private String theater;
 	private String screen;
@@ -31,11 +31,11 @@ public class TicketDTO {
 	private String isCancel;
 	private Date cancelDate;
 	
-	public int getTicket_id() {
-		return ticket_id;
+	public int getTicketID() {
+		return ticketID;
 	}
-	public void setTicket_id(int ticket_id) {
-		this.ticket_id = ticket_id;
+	public void setTicketID(int ticketID) {
+		this.ticketID = ticketID;
 	}
 	public String getNo() {
 		return no;
@@ -43,35 +43,35 @@ public class TicketDTO {
 	public void setNo(String no) {
 		this.no = no;
 	}
-	public int getSeat_id() {
-		return seat_id;
+	public int getSeatID() {
+		return seatID;
 	}
-	public void setSeat_id(int seat_id) {
-		this.seat_id = seat_id;
+	public void setSeatID(int seatID) {
+		this.seatID = seatID;
 	}
-	public int getScreen_id() {
-		return screen_id;
+	public int getScreenID() {
+		return screenID;
 	}
-	public void setScreen_id(int screen_id) {
-		this.screen_id = screen_id;
+	public void setScreenID(int screenID) {
+		this.screenID = screenID;
 	}
-	public int getMember_id() {
-		return member_id;
+	public int getMemberID() {
+		return memberID;
 	}
-	public void setMember_id(int member_id) {
-		this.member_id = member_id;
+	public void setMemberID(int memberID) {
+		this.memberID = memberID;
 	}
-	public int getMcard_id() {
-		return mcard_id;
+	public int getMcardID() {
+		return mcardID;
 	}
-	public void setMcard_id(int mcard_id) {
-		this.mcard_id = mcard_id;
+	public void setMcardID(int mcardID) {
+		this.mcardID = mcardID;
 	}
-	public int getCoupon_id() {
-		return coupon_id;
+	public int getCouponID() {
+		return couponID;
 	}
-	public void setCoupon_id(int coupon_id) {
-		this.coupon_id = coupon_id;
+	public void setCouponID(int couponID) {
+		this.couponID = couponID;
 	}
 	public String getMovie() {
 		return movie;

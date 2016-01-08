@@ -6,6 +6,7 @@
 	
 	<sqlMap resource="/sql/AreaSQL.xml"/>
 	<sqlMap resource="/sql/TheatersSQL.xml"/>
+	<sqlMap resource="/sql/TimetableSQL.xml"/>
 	<sqlMap resource="/sql/memberSQL.xml"/>
 	<sqlMap resource="/sql/mypageSQL.xml"/>	
 	<sqlMap resource="/sql/GenreSQL.xml"/>

@@ -16,10 +16,11 @@
 >		
 
 		<context:component-scan base-package="rose.bean"/>
+		<context:component-scan base-package="rose.timetable.bean"/>
 		<context:component-scan base-package="rose.theater.bean"/>
 		<context:component-scan base-package="rose.area.bean"/>
+		<context:component-scan base-package="rose.screen.bean"/>
 		<context:component-scan base-package="rose.DTO"/>
-		<context:component-scan base-package="rose.theater.bean"/>
 		<context:component-scan base-package="rose.movie.bean"/>
 
 		

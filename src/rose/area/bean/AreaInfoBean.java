@@ -45,7 +45,7 @@ public class AreaInfoBean{
 	}
 	
 	// PUT : update area information
-	@RequestMapping(value = "/area/{area_id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/area", method = RequestMethod.PUT)
 	@ResponseBody
 	public List<Area> updateAreaInfo(@RequestBody  Area update_area) {
 		sqlMapClient.queryForObject("area.updateAreaInfo", update_area);

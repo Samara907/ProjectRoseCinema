@@ -1,12 +1,35 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page contentType="text/html; charset=utf-8" %>
+
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<title>영화관 안내, 장미극장 입니다.</title>
 
-</body>
+</head>
+
+<%-- 부트스트랩, jquery --%>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<%-- 내부 스크립트 --%>
+<script type="text/javascript">
+</script>
+
+<!--지역/도시 선택 -->
+<p>---------------------------------</p>
+<jsp:include page="select_cities.jsp"/>
+
+<!-- 영화관 정보 -->
+<div>
+<p>---------------------------------</p>
+<p>극장 이름 : ${theater_name }</p>
+<p>주소 : ${adress }</p>
+<p>전화번호 : ${phone }</p>
+<p>총 스크린 수 : ${total_screen }</p>
+<p>총 좌석 수 : ${total_seats }</p>
+</div>
+
+<p>---------------------------------</p>
+<jsp:include page="${view_type }.jsp"/>
+
+
 </html>

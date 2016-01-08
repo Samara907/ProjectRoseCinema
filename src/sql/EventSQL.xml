@@ -7,8 +7,7 @@
 	<typeAlias alias="couponDTO" type="rose.event.dto.CouponDTO"/>
 	<typeAlias alias="eventTypeDTO" type="rose.event.dto.EventTypeDTO"/>
 	<typeAlias alias="eventDTO" type="rose.event.dto.EventDTO"/>
-	
-	
+	<typeAlias alias="movieDTO" type="rose.DTO.MovieInfoDTO"/>
 	
 	<insert id="typeInsert" parameterClass="typeDTO">
 		insert into coupon_type values(coupon_type_seq.nextval,#coupon_name#)
@@ -47,8 +46,13 @@
 	</select>
 	
 	<select id="eventList" resultClass="eventDTO">
-		select * from event
+		<![CDATA[ select * from event where eend_date > sysdate and estart_date < sysdate ]]>
 	</select>
+	
+	<select id="eventEndList" resultClass="eventDTO">
+		<![CDATA[ select * from event where eend_date < sysdate ]]>
+	</select>
+	
 	
 	<select id="eventContent" resultClass="eventDTO" parameterClass="String">
 		select * from event where event_id = #event_id#

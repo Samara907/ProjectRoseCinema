@@ -16,8 +16,6 @@
 			<td><a href="/RoseCinema/">진행중 이벤트</a></td>
 			<td><a href="/RoseCinema/">종료된 이벤트</a></td>
 		</tr>
-		<tr>
-			<td>이벤트가 건있습니다.</td>
-		</tr>	
+		
 	</table>
 </form>

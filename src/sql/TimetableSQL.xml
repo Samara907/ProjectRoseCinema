@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="timetable">
+	
+	<typeAlias alias="Timetable" type="rose.timetable.bean.Timetable"/>
+	<!-- Select timetable fast from now -->
+	<select id="getTimetableFast" resultClass="Timetable" parameterClass="Timetable">
+		select * from (select * from TIMETABLE where TIMETABLE.DATE_INFO = #date_info# and START_TIME > #start_time# ORDER BY START_TIME ASC) where rownum = 1
+	</select>
+	<!-- Select With Theater -->
+	<select id="getTimetablebyTheater" resultClass="Timetable" parameterClass="Timetable">
+		select * from TIMETABLE where THEATER_ID = #theater_id# and DATE_INFO = #date_info# and START_TIME > #start_time#
+	</select>
+	<!-- Select With Screen -->
+	<select id="getTimetableByScreen" resultClass="Timetable" parameterClass="Timetable">
+		select * from TIMETABLE where SCREEN_ID = #screen_id# and DATE_INFO = #date_info# and START_TIME > #start_time#
+	</select>
+	<!-- insert new timetable -->
+	<insert id="setNewTimetable" parameterClass="Timetable">
+		exec insert_timetable(#theater_id#, #movie_id#, #screen_id#, #date_info#, #start_time#, #end_time#, #sale_type#)
+	</insert>
+	
+</sqlMap>

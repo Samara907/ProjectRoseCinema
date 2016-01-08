@@ -22,7 +22,7 @@
 			<td>
 			<select name="coupon_type">
 				<c:forEach var="typeDto" items="${typeList}">
-					<option value="${typeDto.coup  on_num}">${typeDto.coupon_name}</option>
+					<option value="${typeDto.coupon_num}">${typeDto.coupon_name}</option>
 				</c:forEach>
 			</select>
 			</td>

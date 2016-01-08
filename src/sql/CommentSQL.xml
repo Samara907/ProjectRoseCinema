@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="comment">
+
+	<typeAlias alias="comment" type="rose.DTO.CommentInfoDTO"/>
+	
+	<select id="commentinsert" parameterClass="comment">
+		insert into comment_info(comment_id,movie_id,member_id,content,score,recommend)
+		values(comment_id_SEQ.NEXTVAL,#movie_id#,#member_id#,#content#,#score#,#recommend#)
+	</select>
+	
+	<select id="getCommentList" resultClass="comment" >
+		select * from Comment_INFO where comment_id=#comment_id#
+	</select>
+	
+	
+	
+	
+	
+	
+</sqlMap>

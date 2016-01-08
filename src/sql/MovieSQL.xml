@@ -37,6 +37,22 @@
 	<update id="fileUp" parameterClass="movie">
 		update movie_info set video=#video#,stilcut=#stilcut#,movie_image=#movie_image# where movie_id=#movie_id#
 	</update>
+	
+	<select id="listMovie" resultClass="movie">
+		select * from movie_info
+	</select>	
+	
+	<select id="contentMovie" resultClass="movie" parameterClass="int">
+		select * from movie_info where movie_id = #movie_id#
+	</select>	
+	
+	<select id="conmment" resultClass="movie">
+		select * from comment_info
+	</select>
+	
+	
+	
+	
 </sqlMap>
 
 

@@ -12,6 +12,7 @@
 	<sqlMap resource="/sql/mypageSQL.xml"/>	
 	<sqlMap resource="/sql/TheatersSQL.xml"/>
 	<sqlMap resource="/sql/EventSQL.xml"/>
+	<sqlMap resource="/sql/CommentSQL.xml"/>
 
 </sqlMapConfig>
 

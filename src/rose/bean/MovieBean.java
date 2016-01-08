@@ -2,6 +2,7 @@ package rose.bean;
 
 import java.io.File;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -17,6 +18,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+import rose.DTO.CommentInfoDTO;
+import rose.DTO.GradeTypeDTO;
 import rose.DTO.MovieInfoDTO;
 
 @Controller 
@@ -29,11 +32,6 @@ public class MovieBean {
 	public ModelAndView upload()throws Exception{
 		List alist = sqlMapClient.queryForList("genre.getGenreList", null);
 		List bgrade = sqlMapClient.queryForList("grade.getGradeList", null);
-		System.out.println(bgrade.size());
-		System.out.println(bgrade.size());
-		System.out.println(bgrade.size());
-		System.out.println(bgrade.size());
-		System.out.println(bgrade.size());
 		ModelAndView mv = new ModelAndView ();
 		mv.addObject("alist", alist);
 		mv.addObject("bgrade", bgrade);
@@ -77,7 +75,9 @@ public class MovieBean {
 			}else{
 				simg += sysName+",";
 			}
-			File copyFile = new File("E:\\save\\"+sysName);
+			String path = multi.getRealPath("movie//movie_image//");
+			System.out.println("================="+path);
+			File copyFile = new File(path+"//"+sysName);
 			file.transferTo(copyFile);
 			fileNum++;
 		}
@@ -85,15 +85,44 @@ public class MovieBean {
 		
 		sqlMapClient.update("movie.fileUp", dto);
 
-
-
 		ModelAndView mv = new ModelAndView ();
 		mv.setViewName("/movie/movieinsert.jsp");
 	
 		return mv;
 	}
-
-}
+	
+	@RequestMapping("/movie/movielist.do")
+	public ModelAndView list()throws Exception{
+		
+		List<MovieInfoDTO> list = sqlMapClient.queryForList("movie.listMovie", null);
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("list" , list);
+		mv.setViewName("/movie/movielist.jsp");
+		return mv;
+	}	
+	
+	@RequestMapping("/movie/moviecontent.do")
+	public ModelAndView content(int movie_id)throws Exception{
+		
+		MovieInfoDTO dto  = (MovieInfoDTO)sqlMapClient.queryForObject("movie.contentMovie", movie_id);
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("dto" , dto);
+		mv.setViewName("/movie/moviecontent.jsp");
+		return mv;
+	}
+	
+	@RequestMapping("/movie/comment.do")
+	public ModelAndView comment(HttpServletRequest request)throws Exception{
+		request.setCharacterEncoding("UTF-8");
+		String str = request.getParameter("score");
+		String comment = request.getParameter("comment");
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/movie/moviecontent.jsp");
+		return mv;
+	}
+}	
+	
 
 
 

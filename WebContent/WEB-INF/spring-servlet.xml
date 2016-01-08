@@ -20,10 +20,6 @@
 		<context:component-scan base-package="test.rose.bean"/>
 		<context:component-scan base-package="rose.event.bean"/>
 		
-
-
-		
-		
 	
 		<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
 			<property name="configLocation" value="/WEB-INF/sqlMapConfig.xml"/>	
@@ -47,7 +43,6 @@
 			<property name="defaultEncoding" value="utf-8"></property>
 		</bean>
 		
-		<mvc:annotation-driven />
 		<!-- jackson -->
 		<!-- <bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/> -->
 		

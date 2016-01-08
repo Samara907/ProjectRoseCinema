@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<title>영화 업로드</title>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -60,7 +61,7 @@
 	<font size="5"><b>Movie Upload Form</b></font>
 	<p/>
 	<form action="/RoseCinema/movie/movieinsert.do" name="testForm" enctype="multipart/form-data" method="post">
-	<table border="1">
+	<table border="0">
 		<tr>
 			<td>영화 제목</td>
 			<td><input class="text" name="movie_name"/></td>

@@ -61,8 +61,8 @@
 		<td>영화정보</td><!--DB 정보 출력 -->
 		<td>
 			<select name="timetable_id">
-				<option value="1" >히말라야</option>
-				<option value="2">스타워즈:깨어난포스</option>
+					<option value="1" >히말라야 A관 10:30</option>
+					<option value="2">스타워즈:깨어난포스</option>
 			</select>
 		</td>
 	</tr>

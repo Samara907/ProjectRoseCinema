@@ -68,6 +68,14 @@ public class EventBean{
 		request.setAttribute("eventlist", eventlist);
 		return "/event/eventList.jsp";
 	}
+	@RequestMapping("/eventEndList")
+	public String eventEndList(HttpServletRequest request) throws Exception{
+		List eventlist = sqlMapClient.queryForList("event.eventEndList",null);
+		request.setAttribute("eventlist", eventlist);
+		return "/event/eventList.jsp";
+	}
+	
+	
 	
 	@RequestMapping("/eventContent")
 	public String eventContent(String event_id, HttpServletRequest request) throws Exception{

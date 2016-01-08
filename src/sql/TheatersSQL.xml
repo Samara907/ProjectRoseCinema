@@ -17,7 +17,7 @@
 	</insert>
 	
 	<update id="updateTheaterInfo" parameterClass="Theater">
-		update THEATER_INFO set THEATER_NAME = #theater_name#, AREA_ID = #area_id#, ADRESS = #adress#, PHONE = #phone#, LOCATION_X = #locatio_x#, LOCATION_Y = #location_y# where THEATER_ID = #theater_id#
+		update THEATER_INFO set THEATER_NAME = #theater_name#, AREA_ID = #area_id#, ADRESS = #adress#, PHONE = #phone#, LOCATION_X = #location_x#, LOCATION_Y = #location_y# where THEATER_ID = #theater_id#
 	</update>
 	
 	<delete id="deleteTheaterInfo" parameterClass="int">

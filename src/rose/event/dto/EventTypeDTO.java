@@ -1,4 +1,4 @@
-package event.rose.bean;
+package rose.event.dto;
 
 public class EventTypeDTO {
 	private int eventtype_id;

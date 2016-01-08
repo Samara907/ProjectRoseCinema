@@ -1,32 +1,28 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<h1>¹«´ë ÀÎ»ç</h1>
+<h1>ë¬´ëŒ€ ì¸ì‚¬</h1>
 <table>
 <tr>
-	<th>³¯Â¥</th>
-	<th>¿µÈ­</th>
-	<th>»ó¿µ½Ã°£</th>
-	<th>±ØÀå¾ÆÀÌµð</th>
-	<th>»ó¿µ°ü¾ÆÀÌµð</th>
-	<th>Ãâ¿¬Áø</th>
+	<th>ë²ˆí˜¸</th>
+	<th>ì˜í™”</th>
+	<th>ê·¹ìž¥ì•„ì´ë””</th>
+	<th>ì¡°íšŒìˆ˜</th>
 </tr>
 <tr>
-	<td></td>
-	<td></td>
 	<td></td>
 	<td></td>
 	<td></td>
 	<td></td>
 </tr>
 </table>
-<a href="greetwrite.jsp">±Û¾²±â</a>
+<a href="greet.jsp">ê¸€ì“°ê¸°</a>
 
 </body>
 </html>

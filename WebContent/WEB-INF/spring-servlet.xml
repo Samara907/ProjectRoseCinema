@@ -22,9 +22,9 @@
 		<context:component-scan base-package="rose.screen.bean"/>
 		<context:component-scan base-package="rose.DTO"/>
 		<context:component-scan base-package="rose.movie.bean"/>
+		<context:component-scan base-package="test.rose.bean"/>
+		<context:component-scan base-package="rose.event.bean"/>
 
-		
-		
 	
 		<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
 			<property name="configLocation" value="/WEB-INF/sqlMapConfig.xml"/>	
@@ -33,7 +33,7 @@
 			<property name="sqlMapClient" ref="sqlMapClient"/>
 			<property name="dataSource" ref="dataSource"/>
 		</bean>
-		<bean		id="dataSource"
+		<bean		id="dataSource" 
 					class="org.apache.tomcat.dbcp.dbcp.BasicDataSource"
 					destroy-method="close"
 					p:driverClassName="oracle.jdbc.driver.OracleDriver"

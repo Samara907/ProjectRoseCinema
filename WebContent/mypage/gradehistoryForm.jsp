@@ -1,20 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@page import = "java.util.*" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 <%
 Calendar cal = Calendar.getInstance();
-//¿À´Ã ³¯Â¥ ±¸ÇÏ±â
+//ì˜¤ëŠ˜ ë‚ ì§œ êµ¬í•˜ê¸°
 int nowYear=cal.get(Calendar.YEAR);
 %>
 
-  [DB:mgrade_historyÅ×ÀÌºí¿¡¼­ Á¤º¸ ²ø¾î´Ù¿Í¼­ º¸¿©ÁÖ±â!!!]
+  [DB:mgrade_historyí…Œì´ë¸”ì—ì„œ ì •ë³´ ëŒì–´ë‹¤ì™€ì„œ ë³´ì—¬ì£¼ê¸°!!!]
   
   <br/>
  
@@ -22,35 +23,65 @@ int nowYear=cal.get(Calendar.YEAR);
   <table border="1">
   	<tr>
   		<td colspan="11">
-  		${memName} ´ÔÀÇ Áö³­ µî±Ş ÀÌ·Â  	
+  		${memName} ë‹˜ì˜ ì§€ë‚œ ë“±ê¸‰ ì´ë ¥  	
   		</td>
   	</tr>
   	
   	<tr>  	
-  		<td>³âµµ</td>   		
-  		<%for(int i=0; i<10;i++){%>
-  			<td> <%=nowYear-i%> </td>		
-  		<%}%>
+  		<td>ë…„ë„</td>   
+  		<c:forEach var="dto" items="${history}">  	
+  			
+			<c:choose>
+				<c:when test="${dto == null}">
+					<td> ì‹ ê·œíšŒì›ì…ë‹ˆë‹¤. </td>
+				</c:when>
+				
+				<c:otherwise>
+					<td> ${dto.year} </td>
+				</c:otherwise>
+			 </c:choose> 			
+			 
+  			<!--   <td> ${dto.year} </td>  -->
+  		</c:forEach>		
   	</tr>
   	
   	
   	<tr> 		 	
-  		<td>µî±Ş</td>
-  		<%for(int i=0; i<10;i++){%>
-  			<td></td>		
-  		<%}%> 
+  		<td>ë“±ê¸‰</td>
+  		<c:forEach var="dto" items="${history}">
+  			<c:if test="${dto == null}">
+  				<td> ì‹ ê·œíšŒì›ì…ë‹ˆë‹¤. </td>
+  			</c:if>	
+  		
+  			<c:if test="${dto.mgrade_id == 1}">
+  				<td> Silver </td>
+  			</c:if>	
+  			
+  			<c:if test="${dto.mgrade_id == 2}">
+  				<td> Gold </td>
+  			</c:if>	
+  			
+  			<c:if test="${dto.mgrade_id == 3}">
+  				<td> WhiteGold </td>
+  			</c:if>
+  			
+  			<c:if test="${dto.mgrade_id == 4}">
+  				<td> RoseGold </td>
+  			</c:if>
+  			
+  		</c:forEach>
   	</tr>
   	
-<form></form>
+
   	
   	
   	
   
   </table>
+
   
   
-  
-  <a href="memgradeinfoForm.jsp">¸â¹ö½± µî±Ş ±âÁØÇ¥</a>
+  <a href="memgradeinfoForm.jsp">ë©¤ë²„ì‰½ ë“±ê¸‰ ê¸°ì¤€í‘œ</a>
   
   
   

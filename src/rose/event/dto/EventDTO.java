@@ -1,17 +1,25 @@
-package event.rose.bean;
+package rose.event.dto;
 
 import java.util.Date;
 
 public class EventDTO {
 	private int event_id;
 	private int eventtype_id;
-	private Date estart_date;
-	private Date eend_date;
+	private String estart_date;
+	private String eend_date;
 	private String event_name;
 	private String event_image;
 	private int timetable_id;
 	private int coupon_id;
+	private String event_poster;
 	
+	
+	public String getEvent_poster() {
+		return event_poster;
+	}
+	public void setEvent_poster(String event_poster) {
+		this.event_poster = event_poster;
+	}
 	public int getEvent_id() {
 		return event_id;
 	}
@@ -24,16 +32,18 @@ public class EventDTO {
 	public void setEventtype_id(int eventtype_id) {
 		this.eventtype_id = eventtype_id;
 	}
-	public Date getEstart_date() {
+	
+	
+	public String getEstart_date() {
 		return estart_date;
 	}
-	public void setEstart_date(Date estart_date) {
+	public void setEstart_date(String estart_date) {
 		this.estart_date = estart_date;
 	}
-	public Date getEend_date() {
+	public String getEend_date() {
 		return eend_date;
 	}
-	public void setEend_date(Date eend_date) {
+	public void setEend_date(String eend_date) {
 		this.eend_date = eend_date;
 	}
 	public String getEvent_name() {

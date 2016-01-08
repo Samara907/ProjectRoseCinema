@@ -1,35 +1,35 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
 
-<font size="6">[ÇöÀç ³âµµ] ROSE CINEMA VIP ¼±Á¤ ±âÁØ</font>
+<font size="6">[í˜„ìž¬ ë…„ë„] ROSE CINEMA VIP ì„ ì • ê¸°ì¤€</font>
 <hr>
 
 
 <table border="1">
-* vip: goldÈ¸¿ø<br/>
-1³â°£ 20Æí ÀÌ»ó ¿µÈ­ ¿¹¸Å ½Ã <br/><br/>
+* vip: goldíšŒì›<br/>
+1ë…„ê°„ 20íŽ¸ ì´ìƒ ì˜í™” ì˜ˆë§¤ ì‹œ <br/><br/>
 
-* vvip: white gold È¸¿ø<br/>
-2³â ¿¬¼Ó 1³â °£ 20Æí ÀÌ»ó ¿µÈ­ ¿¹¸Å ½Ã, 2³â ¿¬¼Ó gold È¸¿ø ÃæÁ· ½Ã<br/><br/>
+* vvip: white gold íšŒì›<br/>
+2ë…„ ì—°ì† 1ë…„ ê°„ 20íŽ¸ ì´ìƒ ì˜í™” ì˜ˆë§¤ ì‹œ, 2ë…„ ì—°ì† gold íšŒì› ì¶©ì¡± ì‹œ<br/><br/>
 
-* VVip: rose gold È¸¿ø<br/>
-3³â ¿¬¼Ó goldÈ¸¿ø ÃæÁ· ½Ã
+* VVip: rose gold íšŒì›<br/>
+3ë…„ ì—°ì† goldíšŒì› ì¶©ì¡± ì‹œ
 </table>
 <br/>
 <hr>
-- ±â°£: [ÀÛ³â ³âµµ]01.01~[´ÙÀ½³â ³âµµ]12.31(»ó¿µÀÏ ±âÁØ)<br/>
-- ±â°£ ³» À¯·á ¿¹¸ÅÇÑ ¿µÈ­ Æí¼ö
-- µî±Þ À¯Áö ±â°£: [¿ÃÇØ ³âµµ]01.01~[³»³â ³âµµ]12.31
+- ê¸°ê°„: [ìž‘ë…„ ë…„ë„]01.01~[ë‹¤ìŒë…„ ë…„ë„]12.31(ìƒì˜ì¼ ê¸°ì¤€)<br/>
+- ê¸°ê°„ ë‚´ ìœ ë£Œ ì˜ˆë§¤í•œ ì˜í™” íŽ¸ìˆ˜
+- ë“±ê¸‰ ìœ ì§€ ê¸°ê°„: [ì˜¬í•´ ë…„ë„]01.01~[ë‚´ë…„ ë…„ë„]12.31
 <br/>
-<input type="button" value="³ªÀÇ ¿¹¸ÅÈ½¼ö Á¶È¸ÇÏ±â" onclick="location.href='mypoint.jsp'">
+<input type="button" value="ë‚˜ì˜ ì˜ˆë§¤íšŸìˆ˜ ì¡°íšŒí•˜ê¸°" onclick="location.href='mypoint.jsp'">
 
 
 </body>

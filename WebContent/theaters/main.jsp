@@ -1,7 +1,9 @@
 <%@ page contentType="text/html; charset=utf-8" %>
+
 <html>
 <head>
 <title>영화관 안내, 장미극장 입니다.</title>
+
 </head>
 
 <%-- 부트스트랩, jquery --%>

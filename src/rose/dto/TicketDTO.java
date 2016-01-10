@@ -6,7 +6,6 @@ public class TicketDTO {
 
 	private int ticketID;
 	private String no;
-	private int seatID;
 	private int screenID;
 	private int memberID;
 	private int mcardID;
@@ -42,12 +41,6 @@ public class TicketDTO {
 	}
 	public void setNo(String no) {
 		this.no = no;
-	}
-	public int getSeatID() {
-		return seatID;
-	}
-	public void setSeatID(int seatID) {
-		this.seatID = seatID;
 	}
 	public int getScreenID() {
 		return screenID;

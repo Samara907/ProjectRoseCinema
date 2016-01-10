@@ -9,10 +9,28 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-	selectAllTicketList();
+	selectAllTicket();
+	selectAllScreenID();
+	
 
 })
 
+function deleteTicket(inputData) {
+	
+	var data = inputData.id;
+	$.ajax({
+		url:"/RoseCinema/deleteTicket/" +data,
+		type:"GET",
+		data:"",
+		cache:false,
+		async:false,
+		dataType:"JSON",
+		
+		success:function(result) {
+			alert(result);
+		}
+	})
+}
 
 /*  $('#ticketList').keydown(function(event) {
 	if (event.which == 13) {s
@@ -22,34 +40,36 @@ $(document).ready(function() {
 }); */
 
 function updateThisData(inputData) {
-		if($(inputData)) {
+/* 	alert(inputData.value);
+	alert(inputData.id); */
+/* 		if($(inputData)) {
 			var $columnID = document.getElementById(inputData.getAttribute('id')).getAttribute('id');
 			var $updateData = document.getElementById(inputData.getAttribute('id')).value;
 			alert("columnID=" +$columnID+ "    updateData=" +$updateData);
-		}
-/*  		if(event.keyCode   == 13) {
+		} */
+		var data = inputData.id + inputData.value;
+		var id = inputData.id;
 			$.ajax({
-				url:"/RoseCinema/update" +$colum,
-				type:"POST",
-				data:{"\"$columnID\" +":"+\"$updateData\""},
+				url:"/RoseCinema/updateThisData/" +data,
+				type:"GET",
+				data:"",
 				cache:false,
 				async:false,
-				dataType:"JSON"
-			})
-			alert("3");
-		} */
+				dataType:"JSON",
+				
+				success:function(result) {
+					if(result) {
+						alert(id);
+						$("#"+id+"").append("<option value=\"1\">asdasdasd</option>");
+					}
+				}
+			});
 
-	}; 
+} 
 
-/* $( '#test' ).click(function() {
-	alert("1");
-	  $( '#test' ).keydown();
-	  alert("2");
-	}); */
-
-function selectAllTicketList() {
+function selectAllScreenID() {
 	$.ajax({
-		url:"/RoseCinema/selectAllTicketList",
+		url:"/RoseCinema/selectAllScreenID",
 		type:"POST",
 		data:"",
 		cache:false,
@@ -57,43 +77,68 @@ function selectAllTicketList() {
 		dataType:"JSON",
 		
 		success:function(result) {
-			//var table = '';
+
 			$.each(result, function(key,value) {
-				//table += '<tr><td>' + value.ticket_id + '</td></tr>';
+				$("select[name=screenID]").append("<option value=\""+value+"\">"+value+"</option>");
+			});
+			
+		}
+	});
+}
+
+function selectAllTicket() {
+	$.ajax({
+		url:"/RoseCinema/selectAllTicket",
+		type:"POST",
+		data:"",
+		cache:false,
+		async:false,
+		dataType:"JSON",
+
+		success:function(result) {
+			$.each(result, function(key,value) {
+				$ticketDate = new Date(value.ticketDate).toLocaleString();
+				$buyDate	= new Date(value.buyDate).toLocaleDateString();
+				$cancelDate	= new Date(value.cancelDate).toLocaleString();
+			
 				 $('#ticketList').append("<tr>"+
 						 "<td>"+
-						 "<button onclick=\"window.open('/RoseCinema/updateTicketForm', 'updateTicketForm', 'width=300,height=300,location=no,status=np,scrollbars=yes')\">"+
-						 value.ticketID +
-						 "</button>"+
+						 	"<button id=\""+value.ticketID+"\" onclick=\"deleteTicket(this)\">"+
+							 value.ticketID +
+							"</button>"+
 						 "</td>"+
-						 "<td><input id=\""+value.ticketID+"no\"			type=\"text\" value=\""+value.no       		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"seatID\"		type=\"text\" value=\""+value.seatID   		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"screenID\"	type=\"text\" value=\""+value.screenID 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"memberID\"	type=\"text\" value=\""+value.memberID 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"mcardID\"		type=\"text\" value=\""+value.mcardID 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"couponID\"	type=\"text\" value=\""+value.couponID 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"movie\"		type=\"text\" value=\""+value.movie			+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"theater\" 	type=\"text\" value=\""+value.theater		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"screen\"		type=\"text\" value=\""+value.screen		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"ticketDate\"	type=\"text\" value=\""+value.ticketDate	+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"count\"		type=\"text\" value=\""+value.count			+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"seat1\"		type=\"text\" value=\""+value.seat1			+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"seat2\"		type=\"text\" value=\""+value.seat2			+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"seat3\"		type=\"text\" value=\""+value.seat3			+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"seat4\"		type=\"text\" value=\""+value.seat4			+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"seat5\"		type=\"text\" value=\""+value.seat5			+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"seat6\"		type=\"text\" value=\""+value.seat6			+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"seat7\"		type=\"text\" value=\""+value.seat7 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"seat8\"		type=\"text\" value=\""+value.seat8 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"buyDate\"		type=\"text\" value=\""+value.buyDate 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"buySum\"		type=\"text\" value=\""+value.buySum 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"buyType\"		type=\"text\" value=\""+value.buyType 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"phone\"		type=\"text\" value=\""+value.phone 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"isCancel\"	type=\"text\" value=\""+value.isCancel 		+"\"onkeydown=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\"cancelDate\"	type=\"text\" value=\""+value.cancelDate 	+"\"onkeydown=\"updateThisData(this)\"></td>"+
-						 "</tr>");
+						 "<td><input id=\""+value.ticketID+"_no\"		 type=\"text\" value=\""+value.no       	+"\"readonly=\readonly\"></td>"+
+						 "<td>"+
+						 	"<select id=\""+value.ticketID+"/SCREENID/\"  name=\"screenID\" onchange=\"updateThisData(this)\">"+
+						 		"<option selected=\"selected\" value=\""+value.screenID+"\">"+
+						 			value.screenID+""+
+						 		"</option>"+
+						 	"</select>"+
+						 "</td>"+
+						 "<td><input id=\""+value.ticketID+"_memberID_\"	 type=\"text\" value=\""+value.memberID 	+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_mcardID_\"	 type=\"text\" value=\""+value.mcardID 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_couponID_\"	 type=\"text\" value=\""+value.couponID 	+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_movie_\"	 type=\"text\" value=\""+value.movie		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_theater_\" 	 type=\"text\" value=\""+value.theater		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_screen_\"	 type=\"text\" value=\""+value.screen		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_ticketDate_\"type=\"text\" value=\""+$ticketDate		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_count_\"	 type=\"text\" value=\""+value.count		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_seat1_\"	 type=\"text\" value=\""+value.seat1		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_seat2_\"	 type=\"text\" value=\""+value.seat2		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_seat3_\"	 type=\"text\" value=\""+value.seat3		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_seat4_\"	 type=\"text\" value=\""+value.seat4		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_seat5_\"	 type=\"text\" value=\""+value.seat5		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_seat6_\"	 type=\"text\" value=\""+value.seat6		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_seat7_\"	 type=\"text\" value=\""+value.seat7 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_seat8_\"	 type=\"text\" value=\""+value.seat8 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_buyDate_\"	 type=\"text\" value=\""+$buyDate			+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_buySum_\"	 type=\"text\" value=\""+value.buySum 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_buyType_\"	 type=\"text\" value=\""+value.buyType 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_phone_\"	 type=\"text\" value=\""+value.phone 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_isCancel_\"	 type=\"text\" value=\""+value.isCancel 	+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "<td><input id=\""+value.ticketID+"_cancelDate_\"type=\"text\" value=\""+$cancelDate		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "</tr>");	 	 
 			});
-			//$('#ticketList').append(table);
 		}
 	});
 }
@@ -109,7 +154,6 @@ function selectAllTicketList() {
 			<tr>
 				<td>TicketID</td>
 				<td>No</td>
-				<td>SeatID</td>
 				<td>ScreenID</td>
 				<td>MemberID</td>
 				<td>McardID</td>
@@ -132,10 +176,12 @@ function selectAllTicketList() {
 				<td>BuyType</td>
 				<td>Phone</td>
 				<td>IsCancel</td>
-				
 				<td>CancelDate</td>
-				
-				<td><input id="screenID" type="text" value="sdfds"  onkeydown="updateThisData(this)"></td>
+				<td>
+				<button onclick="deleteTicket(this)"></button>
+				<select form="">
+					<option selected="selected" onclick="selectAllScreenID(this)">1</option>
+				</select>
 			</tr>
 		</table>
 		</form>

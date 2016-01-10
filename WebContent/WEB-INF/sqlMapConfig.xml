@@ -11,4 +11,5 @@
 	<sqlMap resource="/sql/AreaSQL.xml"/>
 	<sqlMap resource="/sql/FaqSQL.xml"/>
 	<sqlMap resource="/sql/SeatSQL.xml"/>
+	<sqlMap resource="/sql/ScreenSQL.xml"/>
 </sqlMapConfig>

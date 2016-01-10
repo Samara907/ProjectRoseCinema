@@ -1,10 +1,12 @@
 package rose.bean;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -16,11 +18,43 @@ public class TicketInfoBean {
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
 	
-	@RequestMapping("/selectAllTicketList")
+	@RequestMapping("/insertTicketForm")
+	public String insertTicketForm() {
+		return "/ticket/admin/insertTicketForm.jsp";
+	}
+	
+	@RequestMapping("/updateTicketForm")
+	public String updateTicketForm() {
+		return "/ticket/admin/ticketForm.jsp";
+	}
+	
+	@RequestMapping("/deleteTicket/{ticketID}")
 	@ResponseBody
-	public List<TicketDTO> selectAllTicketList() {
-		List<TicketDTO> ticket_list = (List<TicketDTO>)sqlMapClient.queryForList("ticket.selectAllTicketList", null);
-		return ticket_list;
+	public int deleteTicket(@PathVariable String ticketID) {
+		System.out.println(ticketID);
+		return sqlMapClient.delete("ticket.deleteTicket", ticketID);
+	}
+	
+	@RequestMapping("/selectAllTicket")
+	@ResponseBody
+	public List<TicketDTO> selectAllTicket() {
+		List<TicketDTO> ticketList = (List<TicketDTO>)sqlMapClient.queryForList("ticket.selectAllTicket",null);
+		return ticketList;
+	}
+	
+	@RequestMapping("/updateThisData/{ticketID}/{column}/{value}")
+	@ResponseBody
+	public int updateThisData(@PathVariable String ticketID, @PathVariable String column, @PathVariable String value) {
+		System.out.println(ticketID);
+		System.out.println(column);
+		System.out.println(value);
+		
+		HashMap<String,String> updateData = new HashMap<>();
+		updateData.put("TICKETID", ticketID);
+		updateData.put("COLUMN", column);
+		updateData.put("VALUE", value);
+		
+		return sqlMapClient.update("ticket.updateInputData", updateData);
 	}
 	
 /*	@RequestMapping("/getTicketList")
@@ -50,13 +84,5 @@ public class TicketInfoBean {
 		sqlMapClient.queryForObject("ticket.buyTicket", ticket);
 	}*/
 	
-	@RequestMapping("/insertTicketForm")
-	public String insertTicketForm() {
-		return "/ticket/admin/insertTicketForm.jsp";
-	}
-	
-	@RequestMapping("/updateTicketForm")
-	public String updateTicketForm() {
-		return "/ticket/admin/ticketForm.jsp";
-	}
+
 }

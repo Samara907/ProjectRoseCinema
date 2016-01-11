@@ -1,103 +1,175 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>InsertTicketForm</title>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
-	function insertTicket(ticket) {
+$(document).ready(function() {
+	getNextTicketID();
+	selectAllScreenID();
+})
+
+function getNextTicketID() {
+	$.ajax({
+		url:"/RoseCinema/getNextTicketID",
+		type:"POST",
+		data:"",
+		cache:false,
+		async:false,
+		dataType:"JSON",
+		
+		success:function(result) {
+			alert(result);
+			$('#TICKETID').val(result);
+		}
+	})
+}
+	
+function insertTicket(ticket) {
 		$.ajax({
 			url:"/RoseCinema/insertTicket",
 			type:"POST",
-			data:""
-		})
+			data:"",
+			cache:false,
+			async:false,
+			dataType:"JSON",
+			
+			success:function(result) {
+				var next
+			}
+		});
 	}
 	
-	function getSeatList
+function selectAllScreenID() {
+	$.ajax({
+		url:"/RoseCinema/selectAllScreenID",
+		type:"POST",
+		data:"",
+		cache:false,
+		async:false,
+		dataType:"JSON",
+		
+		success:function(result) {
+
+			$.each(result, function(key,value) {
+				$("#SCREENID").append("<option value=\""+value+"\">"+value+"</option>");
+			});
+			
+		}
+	});
+}
+	
+
+
 </script>
 </head>
 <body>
 	<form action="/RoseCinema/insertTicket" method="post">
-		<table border="3">
+		<table id="insertTicketTable" border="3">
 			<tr>
-				<td>Ticket_Id</td>
+				<td>TICKETID</td>
+				<td><input type="text" id="TICKETID"></td>
 			</tr>
 			<tr>
 				<td>No</td>
+				<td><input type="text" readonly="readonly"></td>
 			</tr>
 			<tr>
-				<td>SeatID</td>
+				<td>SCREENID</td>
+				<td>
+					<select id=SCREENID></select>
+				</td>
 			</tr>
 			<tr>
-				<td>ScreenID</td>
+				<td>MEMBERID</td>
+				<td id="tdMEMBERID"></td>
 			</tr>
 			<tr>
-				<td>MemberID</td>
+				<td>MCARDID</td>
+				<td id="tdMCARDID"></td>
 			</tr>
 			<tr>
-				<td>McardID</td>
+				<td>COUPONID</td>
+				<td id="tdCOUPONID"></td>
 			</tr>
 			<tr>
-				<td>CouponID</td>
+				<td>MOVIE</td>
+				<td id="tdMOVIE"></td>
 			</tr>
 			<tr>
-				<td>Movie</td>
+				<td>THEATER</td>
+				<td id="tdTHEATER"></td>
 			</tr>
 			<tr>
-				<td>Theater</td>
+				<td>SCREEN</td>
+				<td id="tdSCREEN"></td>
 			</tr>
 			<tr>
-				<td>Screen</td>
+				<td>TICKETDATE</td>
+				<td id="tdTICKETDATE"></td>
 			</tr>
 			<tr>
-				<td>TicketDate</td>
+				<td>COUNT</td>
+				<td id="tdCOUNT"></td>
 			</tr>
 			<tr>
-				<td>Count</td>
+				<td>SEAT1</td>
+				<td id="tdSEAT1"></td>
 			</tr>
 			<tr>
-				<td>Seat1</td>
+				<td>SEAT2</td>
+				<td id="tdSEAT2"></td>
 			</tr>
 			<tr>
-				<td>Seat2</td>
+				<td>SEAT3</td>
+				<td id="tdSEAT3"></td>
 			</tr>
 			<tr>
-				<td>Seat3</td>
+				<td>SEAT4</td>
+				<td id="tdSEAT4"></td>
 			</tr>
 			<tr>
-				<td>Seat4</td>
+				<td>SEAT5</td>
+				<td id="tdSEAT5"></td>
 			</tr>
 			<tr>
-				<td>Seat5</td>
+				<td>SEAT6</td>
+				<td id="tdSEAT6"></td>
 			</tr>
 			<tr>
-				<td>Seat6</td>
+				<td>SEAT7</td>
+				<td id="tdSEAT7"></td>
 			</tr>
 			<tr>
-				<td>Seat7</td>
+				<td>SEAT8</td>
+				<td id="tdSEAT8"></td>
 			</tr>
 			<tr>
-				<td>Seat8</td>
+				<td>BUYDATE</td>
+				<td id="tdBUYDATE"></td>
 			</tr>
 			<tr>
-				<td>BuyDate</td>
+				<td>BUYSUM</td>
+				<td id="tdBUYSUM"></td>
 			</tr>
 			<tr>
-				<td>BuySum</td>
+				<td>BUYTYPE</td>
+				<td id="tdBUYTYPE"></td>
 			</tr>
 			<tr>
-				<td>BuyType</td>
+				<td>PHONE</td>
+				<td id="tdPHONE"></td>
 			</tr>
 			<tr>
-				<td>Phone</td>
+				<td>ISCANCEL</td>
+				<td id="tdISCANCEL"></td>
 			</tr>
 			<tr>
-				<td>IsCancel</td>
-			</tr>
-			<tr>
-				<td>CancelDate</td>
+				<td>CANCELDATE</td>
+				<td id="tdCANCELDATE"></td>
 			</tr>
 		</table>
 	</form>

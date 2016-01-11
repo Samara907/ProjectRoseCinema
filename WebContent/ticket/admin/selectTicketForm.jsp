@@ -15,6 +15,10 @@ $(document).ready(function() {
 
 })
 
+function addInsertTicketForm() {
+	
+}
+
 function deleteTicket(inputData) {
 	
 	var data = inputData.id;
@@ -65,7 +69,22 @@ function updateThisData(inputData) {
 				}
 			});
 
-} 
+}
+
+function selectLastTicketIDSEQ() {
+	$.ajajx({
+		url:"/RoseCinema/selectLastTicketIDSEQ",
+		type:"POSt",
+		data:"",
+		cache:false,
+		async:false,
+		dataType:"JSON",
+		
+		success:function(result) {
+			
+		}
+	})
+}
 
 function selectAllScreenID() {
 	$.ajax({
@@ -101,43 +120,44 @@ function selectAllTicket() {
 				$buyDate	= new Date(value.buyDate).toLocaleDateString();
 				$cancelDate	= new Date(value.cancelDate).toLocaleString();
 			
-				 $('#ticketList').append("<tr>"+
-						 "<td>"+
-						 	"<button id=\""+value.ticketID+"\" onclick=\"deleteTicket(this)\">"+
-							 value.ticketID +
-							"</button>"+
-						 "</td>"+
-						 "<td><input id=\""+value.ticketID+"_no\"		 type=\"text\" value=\""+value.no       	+"\"readonly=\readonly\"></td>"+
-						 "<td>"+
-						 	"<select id=\""+value.ticketID+"/SCREENID/\"  name=\"screenID\" onchange=\"updateThisData(this)\">"+
-						 		"<option selected=\"selected\" value=\""+value.screenID+"\">"+
-						 			value.screenID+""+
-						 		"</option>"+
-						 	"</select>"+
-						 "</td>"+
-						 "<td><input id=\""+value.ticketID+"_memberID_\"	 type=\"text\" value=\""+value.memberID 	+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_mcardID_\"	 type=\"text\" value=\""+value.mcardID 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_couponID_\"	 type=\"text\" value=\""+value.couponID 	+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_movie_\"	 type=\"text\" value=\""+value.movie		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_theater_\" 	 type=\"text\" value=\""+value.theater		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_screen_\"	 type=\"text\" value=\""+value.screen		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_ticketDate_\"type=\"text\" value=\""+$ticketDate		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_count_\"	 type=\"text\" value=\""+value.count		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_seat1_\"	 type=\"text\" value=\""+value.seat1		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_seat2_\"	 type=\"text\" value=\""+value.seat2		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_seat3_\"	 type=\"text\" value=\""+value.seat3		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_seat4_\"	 type=\"text\" value=\""+value.seat4		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_seat5_\"	 type=\"text\" value=\""+value.seat5		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_seat6_\"	 type=\"text\" value=\""+value.seat6		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_seat7_\"	 type=\"text\" value=\""+value.seat7 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_seat8_\"	 type=\"text\" value=\""+value.seat8 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_buyDate_\"	 type=\"text\" value=\""+$buyDate			+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_buySum_\"	 type=\"text\" value=\""+value.buySum 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_buyType_\"	 type=\"text\" value=\""+value.buyType 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_phone_\"	 type=\"text\" value=\""+value.phone 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_isCancel_\"	 type=\"text\" value=\""+value.isCancel 	+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "<td><input id=\""+value.ticketID+"_cancelDate_\"type=\"text\" value=\""+$cancelDate		+"\"onkeyup=\"updateThisData(this)\"></td>"+
-						 "</tr>");	 	 
+				 $('#ticketListTable').append(
+						 "<tr>"+
+						 	"<td>"+
+						 		"<button id=\""+value.ticketID+"\" onclick=\"deleteTicket(this)\">"+
+								 value.ticketID +
+								"</button>"+
+						 	"</td>"+
+						 	"<td><input id=\""+value.ticketID+"_no\"		 type=\"text\" value=\""+value.no       	+"\"readonly=\readonly\"></td>"+
+						 	"<td>"+
+						 		"<select id=\""+value.ticketID+"/SCREENID/\"  name=\"screenID\" onchange=\"updateThisData(this)\">"+
+						 			"<option selected=\"selected\" value=\""+value.screenID+"\">"+
+						 				value.screenID+""+
+						 			"</option>"+
+						 		"</select>"+
+						 	"</td>"+
+						 	"<td><input id=\""+value.ticketID+"_memberID_\"	 type=\"text\" value=\""+value.memberID 	+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 	"<td><input id=\""+value.ticketID+"_mcardID_\"	 type=\"text\" value=\""+value.mcardID 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 	"<td><input id=\""+value.ticketID+"_couponID_\"	 type=\"text\" value=\""+value.couponID 	+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 	"<td><input id=\""+value.ticketID+"_movie_\"	 type=\"text\" value=\""+value.movie		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 	"<td><input id=\""+value.ticketID+"_theater_\" 	 type=\"text\" value=\""+value.theater		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 	"<td><input id=\""+value.ticketID+"_screen_\"	 type=\"text\" value=\""+value.screen		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 	"<td><input id=\""+value.ticketID+"_ticketDate_\"type=\"text\" value=\""+$ticketDate		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 	"<td><input id=\""+value.ticketID+"_count_\"	 type=\"text\" value=\""+value.count		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 	"<td><input id=\""+value.ticketID+"_seat1_\"	 type=\"text\" value=\""+value.seat1		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 	"<td><input id=\""+value.ticketID+"_seat2_\"	 type=\"text\" value=\""+value.seat2		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 	"<td><input id=\""+value.ticketID+"_seat3_\"	 type=\"text\" value=\""+value.seat3		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 	"<td><input id=\""+value.ticketID+"_seat4_\"	 type=\"text\" value=\""+value.seat4		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 	"<td><input id=\""+value.ticketID+"_seat5_\"	 type=\"text\" value=\""+value.seat5		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 	"<td><input id=\""+value.ticketID+"_seat6_\"	 type=\"text\" value=\""+value.seat6		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 	"<td><input id=\""+value.ticketID+"_seat7_\"	 type=\"text\" value=\""+value.seat7 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 	"<td><input id=\""+value.ticketID+"_seat8_\"	 type=\"text\" value=\""+value.seat8 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 	"<td><input id=\""+value.ticketID+"_buyDate_\"	 type=\"text\" value=\""+$buyDate			+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 	"<td><input id=\""+value.ticketID+"_buySum_\"	 type=\"text\" value=\""+value.buySum 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 	"<td><input id=\""+value.ticketID+"_buyType_\"	 type=\"text\" value=\""+value.buyType 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 	"<td><input id=\""+value.ticketID+"_phone_\"	 type=\"text\" value=\""+value.phone 		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 	"<td><input id=\""+value.ticketID+"_isCancel_\"	 type=\"text\" value=\""+value.isCancel 	+"\"onkeyup=\"updateThisData(this)\"></td>"+
+							"<td><input id=\""+value.ticketID+"_cancelDate_\"type=\"text\" value=\""+$cancelDate		+"\"onkeyup=\"updateThisData(this)\"></td>"+
+						 "</tr>");	 
 			});
 		}
 	});
@@ -150,7 +170,7 @@ function selectAllTicket() {
 	</div>
 	<div>
 	<form>
-		<table id="ticketList" border="3">
+		<table id="ticketListTable" border="3">
 			<tr>
 				<td>TicketID</td>
 				<td>No</td>

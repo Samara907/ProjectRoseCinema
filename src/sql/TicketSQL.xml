@@ -63,6 +63,10 @@
 		SELECT * FROM TICKET_INFO WHERE TICKETID = #ticketID#
 	</select>
 	
+	<select id="selectLastTicketIDSEQ" resultClass="int">
+		    SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = UPPER('TICKET_ID_SEQ')
+	</select>
+	
 
 
 	

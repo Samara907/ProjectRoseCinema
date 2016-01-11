@@ -42,6 +42,13 @@ public class TicketInfoBean {
 		return ticketList;
 	}
 	
+	@RequestMapping("/selectLastTicketIDSEQ")
+	@ResponseBody
+	public int selectLastTicketIDSEQ() {
+		int lastTicketIDSEQ = (int)sqlMapClient.queryForObject("ticket.selectLastTicketIDSEQ", null);
+		return lastTicketIDSEQ;
+	}
+	
 	@RequestMapping("/updateThisData/{ticketID}/{column}/{value}")
 	@ResponseBody
 	public int updateThisData(@PathVariable String ticketID, @PathVariable String column, @PathVariable String value) {
@@ -55,6 +62,11 @@ public class TicketInfoBean {
 		updateData.put("VALUE", value);
 		
 		return sqlMapClient.update("ticket.updateInputData", updateData);
+	}
+	
+	@RequestMapping("/ticket/{timeTable}")
+	public String ticket(@PathVariable String timeTable) {
+		return "test";
 	}
 	
 /*	@RequestMapping("/getTicketList")

@@ -42,11 +42,11 @@ public class TicketInfoBean {
 		return ticketList;
 	}
 	
-	@RequestMapping("/selectLastTicketIDSEQ")
+	@RequestMapping("/getNextTicketID")
 	@ResponseBody
-	public int selectLastTicketIDSEQ() {
+	public int getNextTicketID() {
 		int lastTicketIDSEQ = (int)sqlMapClient.queryForObject("ticket.selectLastTicketIDSEQ", null);
-		return lastTicketIDSEQ;
+		return lastTicketIDSEQ+=1;
 	}
 	
 	@RequestMapping("/updateThisData/{ticketID}/{column}/{value}")

@@ -26,7 +26,10 @@ public class EventBean{
 		request.setAttribute("couponlist", couponlist);
 		return "/event/event.jsp";
 	}
-	
+	@RequestMapping("/eventMain")
+	public String eventMain(HttpServletRequest request)throws Exception{
+		return "/event/eventMain.jsp";
+	}
 	@RequestMapping("/eventPro")
 	public String eventPro(MultipartHttpServletRequest request)throws Exception{
 		
